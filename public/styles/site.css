@@ -1,4 +1,5 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5450,6 +5451,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  font-family: 'Lato', sans-serif; }
+
 #header {
   margin-top: 30px; }
 
@@ -5468,6 +5472,7 @@ button.close {
   background-color: #000;
   background-image: url("/images/welder.png");
   background-repeat: no-repeat;
+  background-position-x: 50%;
   background-position-y: 100px; }
   .hero .logo {
     margin-top: 20px;
