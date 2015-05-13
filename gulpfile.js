@@ -30,7 +30,12 @@ gulp.task('watch:lint', function () {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./public/styles/*.scss')
+	console.log('sass');
+  gulp.src('./public/styles/site.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/styles'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('./public/**/*.scss', ['sass']);
 });
