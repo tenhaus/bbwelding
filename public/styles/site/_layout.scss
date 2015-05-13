@@ -51,8 +51,38 @@ body {
 	.tag-sub {
 		/* ONE “B” FOR BRAINS; : */
 		font-family: Lato-Hairline;
-		font-size: 15px;
 		color: #bbb;
-		line-height: 18px;
+		margin-bottom: 4rem;
+	}
+
+	.actions {
+		/* About B&B: */
+		font-family: Lato-Regular;
+		font-size: 18px;
+		color: #969696;
+		background-color: #191919;
+		border-radius: 5px;
+		
+		div {
+			display: inline-block;
+			height: 6rem;
+			line-height: 6rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			img {
+				margin-top: -4px;
+			}
+
+			p {
+				display: inline-block;
+			}
+		}
+
+		.about {
+		}
+
+		.contact {
+		}
 	}
 }
