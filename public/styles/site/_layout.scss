@@ -20,6 +20,10 @@ body {
     height: auto;
 }
 
+.container {
+	padding: 30px;
+}
+
 .hero {
 	height: 700px;
 	background-color: #000;
@@ -27,7 +31,6 @@ body {
 	background-repeat: no-repeat;
 	background-position-x: 50%;
 	background-position-y: 100px;
-	padding: 30px;
 
 	.text-layer {
 		background-color: rgba(0,0,0,.8);
@@ -89,5 +92,25 @@ body {
 
 .memberships {
 	background-color: #ECF0F1;
-	min-height: 100px;
+
+	img {
+		height: auto;
+		margin: 20px;
+	}
+
+	#aisc {
+		width: 90px;
+	}
+
+	#aws {
+		width: 250px;
+	}
+
+	#dundalk {
+		width: 70px;
+	}
+
+	#asa {
+		width: 90px;
+	}
 }

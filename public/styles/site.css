@@ -5468,14 +5468,16 @@ body {
   max-width: 100%;
   height: auto; }
 
+.container {
+  padding: 30px; }
+
 .hero {
   height: 700px;
   background-color: #000;
   background-image: url("/images/welder.png");
   background-repeat: no-repeat;
   background-position-x: 50%;
-  background-position-y: 100px;
-  padding: 30px; }
+  background-position-y: 100px; }
   .hero .text-layer {
     background-color: rgba(0, 0, 0, 0.8); }
   .hero .tag {
@@ -5513,5 +5515,15 @@ body {
         display: inline-block; }
 
 .memberships {
-  background-color: #ECF0F1;
-  min-height: 100px; }
+  background-color: #ECF0F1; }
+  .memberships img {
+    height: auto;
+    margin: 20px; }
+  .memberships #aisc {
+    width: 90px; }
+  .memberships #aws {
+    width: 250px; }
+  .memberships #dundalk {
+    width: 70px; }
+  .memberships #asa {
+    width: 90px; }
