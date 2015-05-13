@@ -16,6 +16,11 @@
     "tests"
   ],
   "dependencies": {
-    "retinajs": "~1.3.0"
+    "retina.js": "~1.3.0"
+  },
+  "overrides" : {
+    "retina.js": {
+      "main": "dist/retina.min.js"
+    }
   }
 }

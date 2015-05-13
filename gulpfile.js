@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch');
 
 var sass = require('gulp-sass');
+var wiredep = require('wiredep').stream;
 
 /*
  * Create variables for our project paths so we can change in one place
@@ -30,12 +31,18 @@ gulp.task('watch:lint', function () {
 });
 
 gulp.task('sass', function () {
-	console.log('sass');
   gulp.src('./public/styles/site.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/styles'));
 });
 
-gulp.task('sass:watch', function () {
+gulp.task('bower', function () {
+  gulp.src('./templates/views/layouts/default.hbs');
+	gulp.src('./bower_components/**')
+		.pipe(gulp.dest('./public/bower_components'));
+});
+
+gulp.task('default', function () {
   gulp.watch('./public/**/*.scss', ['sass']);
+	gulp.watch('./bower_components/**/', ['bower']);
 });
