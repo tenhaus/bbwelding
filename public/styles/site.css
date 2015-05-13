@@ -5466,4 +5466,9 @@ button.close {
 .hero {
   height: 700px;
   background-color: #000;
-  background-image: url("/images/welder.png"); }
+  background-image: url("/images/welder.png");
+  background-repeat: no-repeat;
+  background-position-y: 100px; }
+  .hero .logo {
+    margin-top: 20px;
+    margin-left: 20px; }

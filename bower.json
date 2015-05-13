@@ -1,0 +1,21 @@
+{
+  "name": "bbwelding",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tenhaus/bbwelding",
+  "authors": [
+    "Chris Hayen <chayen@gmail.com>"
+  ],
+  "description": "B&B site",
+  "main": "templates/views/layouts/default.hbs",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "retinajs": "~1.3.0"
+  }
+}
