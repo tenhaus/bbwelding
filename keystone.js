@@ -3,18 +3,27 @@
 require('dotenv').load();
 
 // Require keystone
-var keystone = require('keystone');
+var keystone = require('keystone'),
+	handlebars = require('express-handlebars');
 
 keystone.init({
 
 	'name': 'B&B Welding',
 	'brand': 'B&B Welding',
 	
-	'less': 'public',
+	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'view engine': 'jade',
+	'view engine': 'hbs',
+	
+	'custom engine': handlebars.create({
+		layoutsDir: 'templates/views/layouts',
+		partialsDir: 'templates/views/partials',
+		defaultLayout: 'default',
+		helpers: new require('./templates/views/helpers')(),
+		extname: '.hbs'
+	}).engine,
 	
 	'emails': 'templates/emails',
 	
@@ -22,7 +31,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': '*x"eu}fO=F"=,~<NP"o1XT~,.beXo|`dfERZynC8x]#N,.SzQ;H3--0aZ=sMT)zq'
+	'cookie secret': 'cc`#;85&bG!]G"vBLJE)Dx~41-}C|"Ke+ITKu6l>A+;_),.%]o:5o^z6@G4vSQ!/'
 
 });
 
