@@ -5511,3 +5511,7 @@ body {
         margin-top: -4px; }
       .hero .actions div p {
         display: inline-block; }
+
+.memberships {
+  background-color: #ECF0F1;
+  min-height: 100px; }
