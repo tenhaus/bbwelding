@@ -3,6 +3,8 @@ var gulp = require('gulp'),
 	jshintReporter = require('jshint-stylish'),
 	watch = require('gulp-watch');
 
+var sass = require('gulp-sass');
+
 /*
  * Create variables for our project paths so we can change in one place
  */
@@ -25,4 +27,10 @@ gulp.task('watch:lint', function () {
 		.pipe(watch())
 		.pipe(jshint())
 		.pipe(jshint.reporter(jshintReporter));
+});
+
+gulp.task('sass', function () {
+  gulp.src('./public/styles/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./public/styles'));
 });
