@@ -5485,7 +5485,8 @@ body {
     font-size: 18px;
     color: #ECF0F1;
     line-height: 22px;
-    display: block; }
+    display: block;
+    border-radius: 5px; }
 
 .gallery-image img {
   display: block;
@@ -5575,6 +5576,8 @@ body {
         margin-top: -4px; }
       .hero .actions div p {
         display: inline-block; }
+      .hero .actions div a {
+        color: #969696; }
 
 .memberships {
   background-color: #ECF0F1; }

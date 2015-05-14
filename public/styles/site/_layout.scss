@@ -45,6 +45,7 @@ body {
 		color: #ECF0F1;
 		line-height: 22px;
 		display: block;
+		border-radius: 5px;
 	}
 }
 
@@ -167,6 +168,10 @@ body {
 
 			p {
 				display: inline-block;
+			}
+
+			a {
+				color: #969696;
 			}
 		}
 	}
