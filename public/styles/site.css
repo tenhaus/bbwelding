@@ -5471,6 +5471,14 @@ body {
 .carousel-inner .item {
   height: 220px; }
 
+.carousel-indicators li {
+  background: #BDC3C7;
+  border: 1px solid #95A5A6; }
+
+.carousel-indicators li.active {
+  background-color: #667b90;
+  border: 1px solid #5e7082; }
+
 .container {
   padding: 30px; }
 
@@ -5573,7 +5581,7 @@ body {
   color: #7F8C8D;
   line-height: 26px;
   display: inline-block;
-  margin-bottom: 2rem; }
+  margin-bottom: 3.5rem; }
 
 .testimonials .testimonial-source {
   font-family: Lato-LightItalic;

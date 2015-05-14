@@ -24,6 +24,16 @@ body {
 	height: 220px;
 }
 
+.carousel-indicators li {
+	background: #BDC3C7;
+	border: 1px solid #95A5A6;
+}
+
+.carousel-indicators li.active {
+	background-color: #34495E + 50;
+	border: 1px solid #2C3E50 + 50;
+}
+
 .container {
 	padding: 30px;
 }
@@ -162,7 +172,7 @@ body {
 	#carousel-testimonials {
 		height: 260px;
 	}
-	
+
 	.testimonial-wrapper {
 		padding: 10%;
 	}
@@ -173,7 +183,7 @@ body {
 		color: #7F8C8D;
 		line-height: 26px;
 		display:inline-block;
-		margin-bottom: 2rem;
+		margin-bottom: 3.5rem;
 	}
 
 	.testimonial-source {
