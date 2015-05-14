@@ -5459,9 +5459,33 @@ body {
   margin-top: 30px; }
 
 #footer {
-  margin-top: 30px;
-  padding-top: 30px;
-  color: #777777; }
+  background-color: #2B3E51; }
+  #footer * {
+    margin: 3rem; }
+  #footer h2 {
+    font-family: Lato-Black;
+    font-size: 24px;
+    color: #ECF0F1;
+    line-height: 26px; }
+  #footer p {
+    font-family: Lato-Regular;
+    font-size: 20px;
+    color: #ECF0F1;
+    line-height: 24px;
+    text-align: center; }
+  #footer .phone {
+    font-family: Lato-Black;
+    font-size: 24px;
+    color: #ECF0F1;
+    line-height: 29px; }
+  #footer a {
+    border: 1px solid #95A5A6;
+    padding: 2rem;
+    font-family: Lato-Regular;
+    font-size: 18px;
+    color: #ECF0F1;
+    line-height: 22px;
+    display: block; }
 
 .gallery-image img {
   display: block;
@@ -5589,3 +5613,21 @@ body {
   color: #585858;
   line-height: 15px;
   text-align: right; }
+
+.numbers p {
+  text-align: center; }
+
+.numbers .row {
+  margin-bottom: 6rem; }
+
+.numbers .number {
+  font-family: Lato-Bold;
+  font-size: 36px;
+  color: #585858;
+  line-height: 44px; }
+
+.numbers .number-text {
+  font-family: Lato-Regular;
+  font-size: 20px;
+  color: #585858;
+  line-height: 24px; }
