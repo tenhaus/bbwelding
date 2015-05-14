@@ -12,7 +12,8 @@ body {
 	background-color: #2B3E51;
 
 	* {
-		margin: 3rem;
+		margin-top: 3rem;
+		margin-bottom: 3rem;
 	}
 
 	h2 {
@@ -46,6 +47,7 @@ body {
 		line-height: 22px;
 		display: block;
 		border-radius: 5px;
+		margin: 3rem;
 	}
 }
 
@@ -80,6 +82,8 @@ body {
 .section {
 	padding-top: 6rem;
 	padding-bottom: 6rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
 
 	h2 {
 		font-family: Lato-Black;
@@ -120,6 +124,7 @@ body {
 	background-repeat: no-repeat;
 	background-position-x: 50%;
 	background-position-y: 100px;
+	padding-top: 2rem;
 
 	.text-layer {
 		background-color: rgba(0,0,0,.8);

@@ -5461,7 +5461,8 @@ body {
 #footer {
   background-color: #2B3E51; }
   #footer * {
-    margin: 3rem; }
+    margin-top: 3rem;
+    margin-bottom: 3rem; }
   #footer h2 {
     font-family: Lato-Black;
     font-size: 24px;
@@ -5486,7 +5487,8 @@ body {
     color: #ECF0F1;
     line-height: 22px;
     display: block;
-    border-radius: 5px; }
+    border-radius: 5px;
+    margin: 3rem; }
 
 .gallery-image img {
   display: block;
@@ -5512,7 +5514,9 @@ body {
 
 .section {
   padding-top: 6rem;
-  padding-bottom: 6rem; }
+  padding-bottom: 6rem;
+  padding-left: 3rem;
+  padding-right: 3rem; }
   .section h2 {
     font-family: Lato-Black;
     font-size: 24px;
@@ -5540,7 +5544,8 @@ body {
   background-image: url("/images/welder.png");
   background-repeat: no-repeat;
   background-position-x: 50%;
-  background-position-y: 100px; }
+  background-position-y: 100px;
+  padding-top: 2rem; }
   .hero .text-layer {
     background-color: rgba(0, 0, 0, 0.8); }
   .hero .tag {
