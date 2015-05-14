@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400,900);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400,900,300italic);
 
 body {
 	font-family: 'Lato', sans-serif;
@@ -20,6 +20,10 @@ body {
     height: auto;
 }
 
+.carousel-inner .item {
+	height: 220px;
+}
+
 .container {
 	padding: 30px;
 }
@@ -37,7 +41,7 @@ body {
 		font-size: 24px;
 		color: #313131;
 		text-align: center;
-		margin-bottom: 12rem;
+		margin-bottom: 6rem;
 	}
 
 	.row {
@@ -154,5 +158,31 @@ body {
 }
 
 .testimonials {
+
+	#carousel-testimonials {
+		height: 260px;
+	}
+	
+	.testimonial-wrapper {
+		padding: 10%;
+	}
+
+	.testimonial {
+		font-family: Lato-Italic;
+		font-size: 20px;
+		color: #7F8C8D;
+		line-height: 26px;
+		display:inline-block;
+		margin-bottom: 2rem;
+	}
+
+	.testimonial-source {
+		font-family: Lato-LightItalic;
+		font-size: 12px;
+		color: #585858;
+		line-height: 15px;
+		text-align:right;
+	}
+
 
 }
