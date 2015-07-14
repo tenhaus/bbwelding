@@ -11,61 +11,272 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400,900,300italic);
+
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+	font-family: 'Lato', sans-serif;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+#header {
+	margin-top: 30px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+#footer {
+	background-color: #2B3E51;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+	* {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	h2 {
+		font-family: Lato-Black;
+		font-size: 24px;
+		color: #ECF0F1;
+		line-height: 26px;
+	}
+
+	p {
+		font-family: Lato-Regular;
+		font-size: 20px;
+		color: #ECF0F1;
+		line-height: 24px;
+		text-align: center;
+	}
+
+	.phone {
+		font-family: Lato-Black;
+		font-size: 24px;
+		color: #ECF0F1;
+		line-height: 29px;
+	}
+
+	a {
+		border: 1px solid #95A5A6;
+		padding: 2rem;
+		font-family: Lato-Regular;
+		font-size: 18px;
+		color: #ECF0F1;
+		line-height: 22px;
+		display: block;
+		border-radius: 5px;
+		margin: 3rem;
+	}
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.gallery-image img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.carousel-inner .item {
+	height: 220px;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+.carousel-indicators li {
+	background: #BDC3C7;
+	border: 1px solid #95A5A6;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
+.carousel-indicators li.active {
+	background-color: #34495E + 50;
+	border: 1px solid #2C3E50 + 50;
 }
+
+.container {
+	padding: 30px;
+}
+
+.aisc-big {
+	margin-bottom: 6rem;
+}
+
+.section {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+
+	h2 {
+		font-family: Lato-Black;
+		font-size: 24px;
+		color: #313131;
+		text-align: center;
+		margin-bottom: 6rem;
+	}
+
+	.row {
+		margin-bottom: 12rem;
+	}
+
+	p {
+		font-family: Lato-Light;
+		font-size: 20px;
+		color: #404040;
+		line-height: 26px;
+
+		em {
+			font-weight: normal;
+		}
+	}
+}
+
+.section.alt {
+	background-color: #ECF0F1;
+
+	h2 {
+		color: #585858;
+	}
+}
+
+.hero {
+	height: 700px;
+	background-color: #000;
+	background-image: url('/images/welder.png');
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+	background-position-y: 100px;
+	padding-top: 2rem;
+
+	.text-layer {
+		background-color: rgba(0,0,0,.8);
+	}
+
+	.tag {
+		margin-top: 300px;
+		font-family: Lato-Regular;
+		font-size: 24px;
+		color: #B7B3AC;
+		line-height: 29px;
+		text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+		text-transform: uppercase;
+
+		em {
+			color: #95A5A6;
+			font-style: normal;
+		}
+	}
+
+	.tag-sub {
+		/* ONE “B” FOR BRAINS; : */
+		font-family: Lato-Hairline;
+		color: #bbb;
+		margin-bottom: 4rem;
+	}
+
+	.actions {
+		/* About B&B: */
+		font-family: Lato-Regular;
+		font-size: 18px;
+		color: #969696;
+		background-color: #191919;
+		border-radius: 5px;
+
+		div {
+			display: inline-block;
+			height: 6rem;
+			line-height: 6rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			img {
+				margin-top: -4px;
+			}
+
+			p {
+				display: inline-block;
+			}
+
+			a {
+				color: #969696;
+			}
+		}
+	}
+}
+
+.memberships {
+	background-color: #ECF0F1;
+
+	img {
+		height: auto;
+		margin: 20px;
+	}
+
+	#aisc {
+		width: 90px;
+	}
+
+	#aws {
+		width: 250px;
+	}
+
+	#dundalk {
+		width: 70px;
+	}
+
+	#asa {
+		width: 90px;
+	}
+}
+
+.about {
+	background-color: #fff;
+}
+
+.testimonials {
+
+	#carousel-testimonials {
+		height: 260px;
+	}
+
+	.testimonial-wrapper {
+		padding: 10%;
+	}
+
+	.testimonial {
+		font-family: Lato-Italic;
+		font-size: 20px;
+		color: #7F8C8D;
+		line-height: 26px;
+		display:inline-block;
+		margin-bottom: 3.5rem;
+	}
+
+	.testimonial-source {
+		font-family: Lato-LightItalic;
+		font-size: 12px;
+		color: #585858;
+		line-height: 15px;
+		text-align:right;
+	}
+}
+
+.numbers {
+	p {
+		text-align: center;
+	}
+
+	.row {
+		margin-bottom: 6rem;
+	}
+
+	.number {
+		font-family: Lato-Bold;
+		font-size: 36px;
+		color: #585858;
+		line-height: 44px;
+	}
+
+	.number-text {
+		font-family: Lato-Regular;
+		font-size: 20px;
+		color: #585858;
+		line-height: 24px;
+	}
+}
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
