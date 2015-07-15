@@ -23,15 +23,23 @@ class NavigationStore extends BaseStore {
 
 let store = new NavigationStore();
 
-store.setAll([{
-  route: 'home',
-  title: 'Home'
-}, {
-  route: 'about',
-  title: 'About'
-}]);
+store.setAll([
+  {
+    route: 'home',
+    title: 'Home'
+  },
+  {
+    route: 'company',
+    title: 'Our Company'
+  },
+  {
+    route: 'work',
+    title: 'Our Work'
+  },
+  {
+    route: 'contact',
+    title: 'Contact'
+  }
+]);
 
 export default store;
-
-
-

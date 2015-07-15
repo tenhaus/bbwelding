@@ -6,7 +6,6 @@ import React from 'react';
 import { RouteHandler } from 'react-router';
 import NavigationStore from '../../stores/NavigationStore';
 import Navigation from '../Navigation/Navigation';
-import Footer from '../Footer/Footer';
 
 function getState() {
   return {
@@ -26,7 +25,6 @@ class App extends React.Component {
       <div className={'app'}>
         <Navigation pages={this.state.pages} />
         <RouteHandler key={this.context.router.getCurrentPath()} />
-        <Footer />
       </div>
     );
   }
