@@ -1,41 +1,119 @@
 {
-  "private": true,
-  "engines": {
-    "node": ">=0.12.0"
+  "name": "bandbwelding",
+  "version": "0.0.0",
+  "description": "B and B Welding site",
+  "repository": "tenhaus/bandbwelding",
+  "config": {
+    "buildDir": "./build",
+    "buildDirTests": "./build_tests",
+    "devHost": "localhost",
+    "devPort": 8000
+  },
+  "scripts": {
+    "build": "NODE_ENV=production npm run webpack",
+    "clean": "rimraf $npm_package_config_buildDir && mkdir $npm_package_config_buildDir",
+    "env": "env",
+    "lint": "eslint --ext .js --ext .jsx ./app ./webpack && echo No linting errors.",
+    "prebuild": "npm run clean",
+    "prestart": "npm install",
+    "pretest": "npm install && npm run lint",
+    "pretest-travis": "npm install && npm run lint",
+    "start": "NODE_ENV=development node dev-server ./webpack/config",
+    "test": "NODE_ENV=test karma start",
+    "test-travis": "NODE_ENV=test karma start --single-run",
+    "webpack": "webpack --colors --progress --config ./webpack/config"
+  },
+  "dependencies": {
+    "classnames": "^2.1.1",
+    "flux": "^2.0.3",
+    "normalize.css": "^3.0.3",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
   },
   "devDependencies": {
-    "babel-core": "^5.5.6",
-    "browser-sync": "^2.2.1",
-    "del": "^1.1.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-cache": "^0.2.8",
-    "gulp-eslint": "^0.13.2",
-    "gulp-if": "^1.2.5",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-minify-css": "^1.1.1",
-    "gulp-minify-html": "^1.0.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.0",
-    "gulp-size": "^1.2.1",
-    "gulp-sourcemaps": "^1.5.0",
-    "gulp-uglify": "^1.1.0",
-    "gulp-useref": "^1.1.1",
-    "main-bower-files": "^2.5.0",
-    "opn": "^1.0.1",
-    "wiredep": "^2.2.2"
+    "autoprefixer-core": "^5.1.11",
+    "babel-core": "^5.3.3",
+    "babel-loader": "^5.0.0",
+    "babel-runtime": "^5.3.3",
+    "chai": "^2.3.0",
+    "css-loader": "^0.12.1",
+    "eslint": "^0.21.0",
+    "eslint-plugin-react": "^2.3.0",
+    "extract-text-webpack-plugin": "^0.8.0",
+    "file-loader": "^0.8.1",
+    "glob": "^5.0.6",
+    "html-loader": "^0.3.0",
+    "json-loader": "^0.5.1",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon": "^1.0.4",
+    "karma-source-map-support": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.4",
+    "karma-webpack": "^1.5.1",
+    "lodash": "^3.8.0",
+    "mocha": "^2.2.4",
+    "mocha-loader": "^0.7.1",
+    "node-libs-browser": "^0.5.0",
+    "opn": "^1.0.2",
+    "postcss-loader": "^0.4.3",
+    "react-hot-loader": "^1.2.7",
+    "rimraf": "^2.3.3",
+    "sass-loader": "^0.4.2",
+    "source-map-support": "^0.2.10",
+    "style-loader": "^0.12.2",
+    "template-html-loader": "0.0.3",
+    "webpack": "^1.9.5",
+    "webpack-dev-server": "^1.8.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   },
   "eslintConfig": {
     "env": {
+      "browser": true,
       "node": true,
-      "browser": true
+      "es6": true
     },
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    },
+    "globals": {
+      "describe": true,
+      "it": true,
+      "sinon": true
+    },
+    "plugins": [
+      "react"
+    ],
     "rules": {
+      "strict": true,
+      "indent": [
+        2,
+        2
+      ],
       "quotes": [
         2,
         "single"
-      ]
+      ],
+      "react/display-name": 0,
+      "react/jsx-quotes": 1,
+      "react/jsx-no-undef": 1,
+      "react/jsx-sort-props": 1,
+      "react/jsx-uses-react": 1,
+      "react/jsx-uses-vars": 1,
+      "react/no-did-mount-set-state": 1,
+      "react/no-did-update-set-state": 1,
+      "react/no-multi-comp": 1,
+      "react/no-unknown-property": 1,
+      "react/prop-types": 1,
+      "react/react-in-jsx-scope": 1,
+      "react/self-closing-comp": 1,
+      "react/wrap-multilines": 1
     }
   }
 }
