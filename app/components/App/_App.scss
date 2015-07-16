@@ -1,6 +1,7 @@
 @import "toolkit";
 
 .app {
+  width: 320px;
   font-size: inherit;
   padding: 20px;
 
@@ -9,5 +10,33 @@
     justify-content: space-between;
     padding: 2rem;
     padding-bottom: 0;
+  }
+}
+
+/* iPhone 6 */
+@media screen and (min-width: 375px) {
+  .app {
+    width: 375px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .app {
+    width: 768px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .app {
+    width: 1024px;
+  }
+}
+
+/* HD */
+@media screen and (min-width: 1440px) {
+  .app {
+    width: 1440px;
   }
 }
