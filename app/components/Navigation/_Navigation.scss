@@ -3,6 +3,8 @@
 .navigation {
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
+  
   li {
     display: inline-block;
     margin-left: 2rem;
@@ -11,10 +13,8 @@
       text-decoration: none;
       color: #fff;
     }
-    &.-selected {
-      a {
-        color: #FF5D5D;
-      }
+    &.-selected a {
+      color: #FF5D5D;
     }
   }
 }

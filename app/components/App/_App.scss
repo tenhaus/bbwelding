@@ -3,11 +3,11 @@
 .app {
   font-size: inherit;
   padding: 20px;
-  background-color: #000;
 
   .header {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
+    padding-bottom: 0;
   }
 }
