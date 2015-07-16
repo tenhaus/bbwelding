@@ -1,0 +1,63 @@
+.home-page {
+  position: relative;
+
+  .welder-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .copy {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+
+    h1 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+    }
+
+    p {
+      font-weight: 300;
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .copy {
+    width: 24rem;
+    top: 390px;
+    left: 121px;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* HD */
+@media screen and (min-width: 1440px) {
+  .home-page {
+    .welder-image {
+      position: absolute;
+      top: -90px;
+      right: -130px;
+      width: 90%;
+    }
+
+    .copy {
+      width: 34rem;
+      top: 270px;
+      left: 111px;
+
+      h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
