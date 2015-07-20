@@ -1,3 +1,7 @@
 /* app.scss */
 
 @import "base";
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
