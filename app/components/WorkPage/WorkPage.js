@@ -4,15 +4,13 @@ import _ from 'lodash';
 
 import React from 'react';
 import Radium from 'radium';
+var Markdown = require( "markdown" ).markdown;
 
-
+import ProjectListItem from '../ProjectListItem/ProjectListItem';
 import AltActions from '../../actions/AltActions';
 import ProjectStore from '../../stores/ProjectStore';
 
 import Style from './_WorkPage';
-
-var Markdown = require( "markdown" ).markdown;
-var Transition = require('react-router').Transition;
 
 class WorkPage extends React.Component {
 
@@ -23,7 +21,8 @@ class WorkPage extends React.Component {
 
     AltActions.updateProjects();
     this.state = {
-      projectStore: ProjectStore.getState()
+      projectStore: ProjectStore.getState(),
+      project: null
     };
   }
 
@@ -39,11 +38,6 @@ class WorkPage extends React.Component {
     this.setState({
       projectStore: projects
     });
-  }
-
-  onProjectClick() {
-    console.log('click');
-    Transition.redirect('/');
   }
 
   getCurrentProject() {
@@ -65,33 +59,38 @@ class WorkPage extends React.Component {
     return selectedProject;
   }
 
-  renderList() {
+  renderList(project) {
     var self = this;
 
     return _.map(this.state.projectStore.projects, entry => {
       var style = {};
 
       // Highlight the current project
-      if(this.props.params.project &&
-         entry.fields.path === this.props.params.project) {
+      if(project &&
+         entry.fields.path === project.fields.path) {
         style = Style.currentProjectListItem;
       }
 
       return (
-        <li style={[Style.projectItem, style]}
-          key={entry.fields.path} onClick={self.onProjectClick}>
-          <a>{entry.fields.project}</a>
-        </li>
+        <ProjectListItem style={[Style.projectItem, style]}
+          project={entry} />
       )
     });
   }
 
-  renderProject() {
-    var project = this.getCurrentProject();
+  renderProject(project) {
     if(!project) return;
 
     let images = _.map(project.fields.images, image => {
-      return <img src={image.fields.file.url} style={Style.projectImage} />
+      var imageSizeStyle = {
+        width: image.fields.file.details.image.width,
+        height: image.fields.file.details.image.height,
+      };
+
+      return (
+        <img src={image.fields.file.url}
+          style={[Style.projectImage, imageSizeStyle]} />
+      );
     });
 
     let html = Markdown.toHTML(project.fields.description);
@@ -106,9 +105,9 @@ class WorkPage extends React.Component {
   }
 
   render() {
-
-    let projectList = this.renderList();
-    let project = this.renderProject();
+    let currentProject = this.getCurrentProject();
+    let projectList = this.renderList(currentProject);
+    let project = this.renderProject(currentProject);
 
     return (
       <div style={Style.base}>
@@ -122,7 +121,6 @@ class WorkPage extends React.Component {
             </ul>
           </div>
         </div>
-
       </div>
     );
   }
