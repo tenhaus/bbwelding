@@ -10,7 +10,7 @@
     "devPort": 8000
   },
   "scripts": {
-    "build": "NODE_ENV=production npm run webpack",
+    "build": "NODE_ENV=development npm run webpack",
     "clean": "rimraf $npm_package_config_buildDir && mkdir $npm_package_config_buildDir",
     "env": "env",
     "lint": "eslint --ext .js --ext .jsx ./app ./webpack && echo No linting errors.",
@@ -50,6 +50,8 @@
     "extract-text-webpack-plugin": "^0.8.0",
     "file-loader": "^0.8.1",
     "glob": "^5.0.6",
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.2",
     "html-loader": "^0.3.0",
     "json-loader": "^0.5.1",
     "karma": "^0.12.31",
