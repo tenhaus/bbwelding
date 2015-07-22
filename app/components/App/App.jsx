@@ -14,16 +14,6 @@ import Navigation from '../Navigation/Navigation';
 
 import isRetina from 'is-retina';
 
-import HandsImage from './images/hands.jpg';
-import HandsImageRetina from './images/hands@2x.jpg';
-
-var style = {
-  work: {
-    backgroundImage: isRetina()? 'url('+HandsImageRetina+')': 'url('+HandsImage+')' ,
-    backgroundSize: 'cover'
-  }
-};
-
 function getState() {
   return {
     pages: NavigationStore.getAll()
@@ -51,10 +41,6 @@ class App extends React.Component {
   render() {
     var pageStyle = {};
     var selectedPage = this.getSelectedPage();
-
-    if(selectedPage.route === 'work') {
-      pageStyle = style.work;
-    }
 
     return (
       <div className='app' style={pageStyle}>

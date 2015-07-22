@@ -15,7 +15,9 @@ export default (
   <Route handler={App}>
     <Route handler={CompanyPage} name="company" path="/company" />
     <Route handler={ContactPage} name="contact" path="/contact" />
-    <Route handler={WorkPage} name="work" path="/work" />
+    <Route handler={WorkPage} name="work" path="/work">
+      <Route handler={WorkPage} path="/work/:project" />
+    </Route>
     <DefaultRoute handler={HomePage} name="home" />
   </Route>
 );
