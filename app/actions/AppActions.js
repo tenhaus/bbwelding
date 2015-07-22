@@ -4,22 +4,22 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import WebAPI from '../util/WebAPI';
 
 import {
-  ITEMS_GET_SUCCESS,
-  ITEMS_GET_ERROR
+  PROJECTS_GET_SUCCESS,
+  PROJECTS_GET_ERROR
 } from '../constants/AppConstants';
 
 export default {
-  getItems() {
-    WebAPI.getItems()
-    .then((items) => {
+  
+  // Grab the projects
+  getProjects() {
+    WebAPI.getProjects().then((projects) => {
       AppDispatcher.dispatch({
-        actionType: ITEMS_GET_SUCCESS,
-        items: items
+        actionType: PROJECTS_GET_SUCCESS,
+        projects: projects
       });
-    })
-    .catch(() => {
+    }).catch(() => {
       AppDispatcher.dispatch({
-        actionType: ITEMS_GET_ERROR
+        actionType: PROJECTS_GET_ERROR
       });
     });
   }

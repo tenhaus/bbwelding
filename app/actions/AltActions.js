@@ -1,3 +1,5 @@
+'use strict'
+import Alt from '../alt';
 import Contentful from 'contentful';
 
 var client = Contentful.createClient({
@@ -6,15 +8,13 @@ var client = Contentful.createClient({
   secure: true
 });
 
-
-export default {
-  
-  getProjects() {
-    return new Promise((resolve, reject) => {
-      client.entries().then((result, err) => {
-        if(err) reject(err);
-        else resolve(result);
-      });
+class AltActions {
+  updateProjects() {
+    client.entries().then((projects) => {
+      this.dispatch(projects);  
     });
+    
   }
-};
+}
+
+export default Alt.createActions(AltActions);
