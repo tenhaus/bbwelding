@@ -10,7 +10,7 @@
     "devPort": 8000
   },
   "scripts": {
-    "build": "NODE_ENV=development npm run webpack",
+    "build": "NODE_ENV=production npm run webpack",
     "clean": "rimraf $npm_package_config_buildDir && mkdir $npm_package_config_buildDir",
     "env": "env",
     "lint": "eslint --ext .js --ext .jsx ./app ./webpack && echo No linting errors.",
