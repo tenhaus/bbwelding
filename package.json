@@ -26,7 +26,7 @@
   "dependencies": {
     "alt": "^0.17.1",
     "classnames": "^2.1.1",
-    "contentful": "^1.1.1",
+    "contentful-agent": "^1.2.0",
     "flux": "^2.0.3",
     "handlebars": "^3.0.3",
     "is-retina": "^1.0.3",

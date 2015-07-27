@@ -12,6 +12,8 @@ import RetinaImage from 'react-retina-image';
 import NavigationStore from '../../stores/NavigationStore';
 import Navigation from '../Navigation/Navigation';
 
+import AltActions from '../../actions/AltActions';
+
 import isRetina from 'is-retina';
 
 function getState() {
@@ -25,6 +27,7 @@ class App extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = getState();
+    AltActions.fetchData();
   }
 
   getSelectedPage() {

@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './_TeamPage.scss';
+
 class TeamPage extends React.Component {
   render() {
     return (
-      <div>Team</div>
+      <div className='team-page'>Team</div>
     );
   }
 }

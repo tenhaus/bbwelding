@@ -7,8 +7,7 @@ import Radium from 'radium';
 var Markdown = require( "markdown" ).markdown;
 
 import ProjectListItem from '../ProjectListItem/ProjectListItem';
-import AltActions from '../../actions/AltActions';
-import ProjectStore from '../../stores/ProjectStore';
+import ContentfulEntryStore from '../../stores/ContentfulEntryStore';
 
 import Style from './_WorkPage';
 
@@ -19,24 +18,23 @@ class WorkPage extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.renderProject = this.renderProject.bind(this);
 
-    AltActions.updateProjects();
     this.state = {
-      projectStore: ProjectStore.getState(),
+      entryStore: ContentfulEntryStore.getState(),
       project: null
     };
   }
 
   componentDidMount() {
-    ProjectStore.listen(this.onChange);
+    ContentfulEntryStore.listen(this.onChange);
   }
 
   componentWillUnmount() {
-    ProjectStore.unlisten(this.onChange);
+    ContentfulEntryStore.unlisten(this.onChange);
   }
 
   onChange(projects) {
     this.setState({
-      projectStore: projects
+      entryStore: projects
     });
   }
 
@@ -46,14 +44,14 @@ class WorkPage extends React.Component {
     // find the project from the url
     if(this.props.params.project) {
       selectedProject = _.findWhere(
-        this.state.projectStore.projects,
+        this.state.entryStore.projects,
         {fields: {path: this.props.params.project}}
       );
     }
 
     // if no project get a random one
     if(!selectedProject) {
-      selectedProject = _.sample(this.state.projectStore.projects);
+      selectedProject = _.sample(this.state.entryStore.projects);
     }
 
     return selectedProject;
@@ -62,7 +60,7 @@ class WorkPage extends React.Component {
   renderList(project) {
     var self = this;
 
-    return _.map(this.state.projectStore.projects, entry => {
+    return _.map(this.state.entryStore.projects, entry => {
       var style = {};
 
       // Highlight the current project
