@@ -18,6 +18,10 @@ class AltActions {
       this.dispatch(content);
     });
   }
+
+  setSelectedTeamMember(member) {
+    this.dispatch(member);
+  }
 }
 
 export default Alt.createActions(AltActions);

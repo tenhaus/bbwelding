@@ -27,7 +27,8 @@ class ProjectStore {
     }
 
     this.bindListeners({
-      handleFetchData: AltActions.FETCH_DATA
+      handleFetchData: AltActions.FETCH_DATA,
+      handleSetSelectedTeamMember: AltActions.SET_SELECTED_TEAM_MEMBER
     });
   }
 
@@ -38,6 +39,10 @@ class ProjectStore {
     if(this.team.length > 0) {
       this.selectedTeamMember = this.team[0];
     }
+  }
+
+  handleSetSelectedTeamMember(member) {
+    this.selectedTeamMember = member;
   }
 }
 

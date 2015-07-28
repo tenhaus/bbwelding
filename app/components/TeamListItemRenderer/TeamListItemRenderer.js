@@ -1,6 +1,8 @@
 import React from 'react';
 import Radium from 'radium';
 
+import AltActions from '../../actions/AltActions';
+
 import Style from './_TeamListItemRenderer.style';
 
 class TeamListItemRenderer extends React.Component {
@@ -9,16 +11,20 @@ class TeamListItemRenderer extends React.Component {
     super();
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseOut = this.onMouseOut.bind(this);
+    this.onClick = this.onClick.bind(this);
     this.state = {showSecondary: false};
   }
 
   onMouseOver() {
     this.setState({showSecondary: true});
-    console.log('mouse over');
   }
 
   onMouseOut() {
     this.setState({showSecondary: false});
+  }
+
+  onClick() {
+    AltActions.setSelectedTeamMember(this.props.member);
   }
 
   render() {
@@ -31,10 +37,13 @@ class TeamListItemRenderer extends React.Component {
 
     return (
       <li className='team-list-item' style={Style.base}
-        onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
+        onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}
+        onClick={this.onClick}>
+
         <img src={profileImage}
           style={[Style.image, this.props.style]} />
         <p>{member.fields.name}</p>
+
       </li>
     );
   }
