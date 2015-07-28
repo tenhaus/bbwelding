@@ -10,7 +10,7 @@ export default {
     color: '#fff',
     backgroundImage: backgroundImage,
     backgroundSize: 'cover',
-    backgroundColor: 'rgba(0,0,0,.5)'
+    backgroundPosition: 'center'
   },
 
   content: {
