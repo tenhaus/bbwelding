@@ -23,8 +23,7 @@ export default {
     height: '100%',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '4rem',
-    fontFamily: 'Raleway, sans-serif'
+    padding: '4rem'
   },
 
   title: {

@@ -47,20 +47,21 @@ class TeamPage extends React.Component {
 
     return (
       <div className='team-page' style={Style.base}>
+        <div className='content' style={Style.content}>
+          <div className='member' style={Style.profile}>
+            <h1 style={Style.title}>
+              {member.fields.name}
+            </h1>
+            <img src={member.fields.primaryImage.fields.file.url}
+              style={Style.profileImage} />
+            <div dangerouslySetInnerHTML={{__html:html}} />
+          </div>
 
-        <div className='member' style={Style.profile}>
-          <h1 style={Style.title}>
-            {member.fields.name}
-          </h1>
-          <img src={member.fields.primaryImage.fields.file.url}
-            style={Style.profileImage} />
-          <div dangerouslySetInnerHTML={{__html:html}} />
-        </div>
-
-        <div className='team'>
-          <ul style={Style.teamList}>
-            {listItems}
-          </ul>
+          <div className='team'>
+            <ul style={Style.teamList}>
+              {listItems}
+            </ul>
+          </div>
         </div>
 
       </div>
