@@ -14,10 +14,22 @@ class TeamPage extends React.Component {
   constructor() {
     super();
     this.onChange = this.onChange.bind(this);
+    this.onMouseOver = this.onMouseOver.bind(this);
+    this.onMouseOut = this.onMouseOut.bind(this);
 
     this.state = {
-      entryStore: ContentfulEntryStore.getState()
+      entryStore: ContentfulEntryStore.getState(),
+      showSecondary: false
     };
+  }
+
+  onMouseOver() {
+    console.log('over');
+    this.setState({showSecondary: true});
+  }
+
+  onMouseOut() {
+    this.setState({showSecondary: false});
   }
 
   componentDidMount() {
@@ -45,6 +57,12 @@ class TeamPage extends React.Component {
     let member = this.state.entryStore.selectedTeamMember;
     let html = Markdown.toHTML(member.fields.biography);
 
+    let profileImage = member.fields.primaryImage.fields.file.url;
+
+    if(this.state.showSecondary) {
+      profileImage = member.fields.secondaryImage.fields.file.url;
+    }
+
     return (
       <div className='team-page' style={Style.base}>
         <div className='content' style={Style.content}>
@@ -52,8 +70,9 @@ class TeamPage extends React.Component {
             <h1 style={Style.title}>
               {member.fields.name}
             </h1>
-            <img src={member.fields.primaryImage.fields.file.url}
-              style={Style.profileImage} />
+            <img src={profileImage}
+              onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}
+              style={Style.profileImage}  />
             <div dangerouslySetInnerHTML={{__html:html}} />
           </div>
 
