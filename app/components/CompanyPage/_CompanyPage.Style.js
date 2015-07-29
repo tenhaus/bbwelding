@@ -1,14 +1,7 @@
-import HandsImage from './images/hands.jpg';
-import HandsImageRetina from './images/hands@2x.jpg';
-import isRetina from 'is-retina';
-
-var backgroundImage = isRetina()? 'url('+HandsImageRetina+')': 'url('+HandsImage+')';
-
 export default {
   base: {
     height: '100%',
-    backgroundImage: backgroundImage,
-    backgroundSize: 'cover'
+    fontWeight: '300'
   },
 
   contentWrapper: {
@@ -17,7 +10,7 @@ export default {
   },
 
   content: {
-    backgroundColor: 'rgba(0,0,0,.5)',
+    backgroundColor: 'rgba(0,0,0,.6)',
     minHeight: '400px',
     height: '100%',
     padding: '4rem'
@@ -30,15 +23,16 @@ export default {
 
   topSection: {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: '4rem'
   },
 
   halfSection: {
-    display: 'inline-block',
-    width: '40%'
+    width: '45%'
   },
 
   image: {
-    marginRight: '1rem'
+    marginRight: '1rem',
+    float: 'left'
   }
 }

@@ -31,14 +31,14 @@ class CompanyPage extends React.Component {
               {/* Section */}
               <div style={Style.halfSection}>
                 <RetinaImage style={Style.image} src={MachineImage} />
-                <p>We gave them big, powerful machines and a 35,000 square foot shop.</p>
+                <p>We gave them big, <em>powerful machines</em> and a 35,000 square foot shop.</p>
               </div>
             </div>
 
             {/* Section */}
             <div style={Style.fullSection}>
               <RetinaImage style={Style.image} src={AiscImage} />
-              <p>Add on AISC membership, a written quality control program, and the ability to electronically import designs straight from the engineers and what you get is one of the most technology-driven steel fabrication shops in the region.</p>
+              <p>Add on AISC membership, a written quality control program, and the ability to electronically import designs straight from the engineers and what you get is one of the most <em>technology-driven steel fabrication</em> shops in the region.</p>
               <p>From small jobs to 500-ton jobs, B&B will complete them swifter, more affordably and with better quality.</p>
             </div>
 

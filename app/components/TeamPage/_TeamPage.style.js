@@ -1,16 +1,7 @@
-import HandsImage from './images/hands.jpg';
-import HandsImageRetina from './images/hands@2x.jpg';
-import isRetina from 'is-retina';
-
-var backgroundImage = isRetina()? 'url('+HandsImageRetina+')': 'url('+HandsImage+')';
-
 export default {
 
   base: {
     color: '#fff',
-    backgroundImage: backgroundImage,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
   },
 
   content: {

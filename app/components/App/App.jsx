@@ -2,19 +2,21 @@
 
 import './_App.scss';
 
+import React from 'react';
+import RetinaImage from 'react-retina-image';
+import isRetina from 'is-retina';
+import {RouteHandler} from 'react-router';
+
 import Logo from './images/logo.png';
 import LogoRetina from './images/logo@2x.png';
+import HandsImage from './images/hands.jpg';
+import HandsImageRetina from './images/hands@2x.jpg';
 
-import React from 'react';
-import { RouteHandler } from 'react-router';
-import RetinaImage from 'react-retina-image';
-
+import AltActions from '../../actions/AltActions';
 import NavigationStore from '../../stores/NavigationStore';
 import Navigation from '../Navigation/Navigation';
 
-import AltActions from '../../actions/AltActions';
-
-import isRetina from 'is-retina';
+var PageBackground = isRetina()? 'url('+HandsImageRetina+')': 'url('+HandsImage+')';
 
 function getState() {
   return {
@@ -33,6 +35,7 @@ class App extends React.Component {
   getSelectedPage() {
     let router = this.context.router;
     let pages = this.state.pages;
+
     for (let i = pages.length - 1; i >= 0; i--) {
       let page = pages[i];
       let isPageActive = Boolean(page.route && router.isActive(page.route));
@@ -42,8 +45,16 @@ class App extends React.Component {
   }
 
   render() {
-    var pageStyle = {};
+    var pageStyle = null;
     var selectedPage = this.getSelectedPage();
+
+    if(selectedPage.route !== 'home') {
+      pageStyle = {
+        backgroundImage: PageBackground,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      };
+    }
 
     return (
       <div className='app' style={pageStyle}>
