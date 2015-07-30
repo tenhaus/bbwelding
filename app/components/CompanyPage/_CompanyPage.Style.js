@@ -24,15 +24,28 @@ export default {
   topSection: {
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: '4rem'
+    marginBottom: '2rem'
   },
 
   halfSection: {
     width: '45%'
   },
+  
+  halfDetail: {
+    height: 75,
+    marginBottom: '4rem',
+  },
 
   image: {
     marginRight: '1rem',
     float: 'left'
-  }
+  },
+  
+  flameText: {
+    paddingTop: '1.5rem'
+  },
+  
+  machineText: {
+    paddingTop: '1.4rem'
+  },
 }

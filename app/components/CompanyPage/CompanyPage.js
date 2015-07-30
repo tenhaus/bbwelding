@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import Vimeo from 'react-vimeo';
 
 import RetinaImage from 'react-retina-image';
 
@@ -20,21 +21,29 @@ class CompanyPage extends React.Component {
         <div style={Style.contentWrapper}>
           <div style={Style.content}>
             <h1 style={Style.title}>Our Company</h1>
+              
             <div style={Style.topSection}>
-
+              
               {/* Section */}
               <div style={Style.halfSection}>
-                <RetinaImage style={Style.image} src={FlameImage} />
-                <p>We took the <em>hardest working</em> people in the steel business and made them <em>smarter</em>.</p>
+                <div style={Style.halfDetail}>
+                  <RetinaImage style={Style.image} src={FlameImage} />
+                  <p style={Style.flameText}>We took the <em>hardest working</em> people in the steel business and made them <em>smarter</em>.</p>
+                </div>
+                <div style={Style.halfDetail}>
+                  <RetinaImage style={Style.image} src={MachineImage} />
+                  <p style={Style.machineText}>We gave them big, <em>powerful machines</em> and a 35,000 square foot shop.</p>
+                </div>
               </div>
 
               {/* Section */}
               <div style={Style.halfSection}>
-                <RetinaImage style={Style.image} src={MachineImage} />
-                <p>We gave them big, <em>powerful machines</em> and a 35,000 square foot shop.</p>
+                <iframe src="https://player.vimeo.com/video/134711747" 
+                  width="500" height="281" frameborder="0" 
+                  webkitallowfullscreen mozallowfullscreen allowfullscreen />
               </div>
             </div>
-
+            
             {/* Section */}
             <div style={Style.fullSection}>
               <RetinaImage style={Style.image} src={AiscImage} />
