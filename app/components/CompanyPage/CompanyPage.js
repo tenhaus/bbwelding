@@ -39,7 +39,7 @@ class CompanyPage extends React.Component {
               {/* Section */}
               <div style={Style.halfSection}>
                 <iframe src="https://player.vimeo.com/video/134711747" 
-                  width="500" height="281" frameborder="0" 
+                  width="400" height="240" frameborder="0" 
                   webkitallowfullscreen mozallowfullscreen allowfullscreen />
               </div>
             </div>

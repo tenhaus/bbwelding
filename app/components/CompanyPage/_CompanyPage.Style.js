@@ -23,8 +23,7 @@ export default {
 
   topSection: {
     display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '2rem'
+    justifyContent: 'space-between'
   },
 
   halfSection: {
