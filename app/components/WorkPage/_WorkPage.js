@@ -22,7 +22,7 @@ export default {
   },
 
   project: {
-    width: '50%'
+    width: '40%'
   },
 
   projectImage: {
@@ -33,6 +33,7 @@ export default {
   projectList: {
     listStyle: 'none',
     marginTop: '5rem',
+    width: '40%'
   },
 
   projectItem: {

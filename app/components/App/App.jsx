@@ -46,19 +46,24 @@ class App extends React.Component {
 
   render() {
     var pageStyle = null;
+    var headerStyle = null;
     var selectedPage = this.getSelectedPage();
 
     if(selectedPage.route !== 'home') {
       pageStyle = {
         backgroundImage: PageBackground,
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
       };
+      
+      headerStyle = {
+        marginBottom: '3rem'
+      }
     }
 
     return (
       <div className='app' style={pageStyle}>
-        <div className='header'>
+        <div className='header' style={headerStyle}>
           <RetinaImage src={Logo} />
           <Navigation pages={this.state.pages} />
         </div>
