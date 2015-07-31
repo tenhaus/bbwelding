@@ -1,17 +1,5 @@
 @import "toolkit";
 
-.wrapper {
-  position: relative;
-  height: 100px;
-  width: 40px;
-  padding-top: 20px;
-}
-
-.mobile-nav-button {
-  display: none;
-  border: none;
-}
-
 .navigation {
   margin: 0;
   padding: 0;
@@ -37,26 +25,41 @@
     display: block;
     position: absolute;
     cursor: pointer;
+    width: 30px;
+    height: 22px;
   }
 
   .navigation {
     display: none;
+  }
+
+  .wrapper {
+    position: relative;
+    height: 100px;
+    width: 40px;
+    padding-top: 20px;
   }
 }
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-}
+  .mobile-nav-button {
+    display: none;
+  }
 
-/* Desktop */
-@media screen and (min-width: 1024px) {
   .navigation {
     display: block;
   }
 
-  .mobile-nav-button {
-    display: none;
+  .wrapper {
+    width: auto;
+    height: auto;
   }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+
 }
 
 /* HD */

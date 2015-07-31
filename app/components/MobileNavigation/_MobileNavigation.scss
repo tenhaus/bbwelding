@@ -11,31 +11,3 @@
     }
   }
 }
-
-/* iPhone 6 */
-@media screen and (min-width: 300px) {
-  .mobile-nav-button {
-    display: block;
-    position: absolute;
-    cursor: pointer;
-  }
-
-  .navigation {
-    display: none;
-  }
-}
-
-/* Tablet */
-@media screen and (min-width: 768px) {
-}
-
-/* Desktop */
-@media screen and (min-width: 1024px) {
-  .navigation {
-    display: none;
-  }
-}
-
-/* HD */
-@media screen and (min-width: 1440px) {
-}
