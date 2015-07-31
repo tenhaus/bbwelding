@@ -18,11 +18,19 @@ export default {
 
   teamList: {
     listStyle: 'none',
-    marginTop: '5rem'
+    marginTop: '5rem',
+
+    '@media (max-width: 400px)' : {
+      display: 'none'
+    }
   },
 
   profile: {
-    width: '50%'
+    width: '50%',
+
+    '@media (max-width: 400px)' : {
+      width: '100%'
+    }
   },
 
   profileImage: {

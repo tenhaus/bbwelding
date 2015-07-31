@@ -66,7 +66,7 @@ class TeamPage extends React.Component {
     return (
       <div className='team-page' style={Style.base}>
         <div className='content' style={Style.content}>
-          <div className='member' style={Style.profile}
+          <div className='member' style={Style.profile} key='profile'
             onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
             <h1 style={Style.title}>
               {member.fields.name}
@@ -75,7 +75,7 @@ class TeamPage extends React.Component {
             <div dangerouslySetInnerHTML={{__html:html}} />
           </div>
 
-          <div className='team'>
+          <div className='team' key='team'>
             <ul style={Style.teamList}>
               {listItems}
             </ul>
