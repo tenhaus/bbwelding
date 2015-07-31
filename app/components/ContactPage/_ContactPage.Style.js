@@ -14,20 +14,24 @@ export default {
     height: '100%',
     padding: '4rem'
   },
-  
+
   split: {
-    display: 'flex'
+    display: 'flex',
+
+    '@media (max-width: 768px)' : {
+      flexDirection: 'column'
+    }
   },
-  
+
   title: {
     fontWeight: 500
   },
-  
+
   left: {
     width: '30%',
     marginRight: '10%'
   },
-  
+
   right: {
     width: '60%'
   }

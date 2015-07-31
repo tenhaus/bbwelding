@@ -4,7 +4,7 @@ import Radium from 'radium';
 import Style from './_ContactPage.Style';
 
 class ContactPage extends React.Component {
-  
+
   render() {
     return (
       <div id="contact-page" style={Style.base}>
@@ -12,42 +12,42 @@ class ContactPage extends React.Component {
           <div style={Style.content}>
             <h1 style={Style.title}>Contact</h1>
             <div style={Style.split}>
-              
+
               {/* Contact Details*/}
               <div style={Style.left}>
-                
+
                 <div style={Style.detailSection}>
                   <h3>Mailing Address</h3>
                   <p>PO Box 10 Ft. Howard, MD 21052</p>
                 </div>
-                
+
                 <div style={Style.detailSection}>
                   <h3>Physical Address</h3>
                   <p>4640 Northpoint Blvd. Edgemere, MD 21219</p>
                 </div>
-                
+
                 <div style={Style.detailSection}>
                   <h3>Telephone </h3>
                   <p>410-388-1100</p>
                 </div>
-                
+
                 <div style={Style.detailSection}>
                   <h3>Facsimile</h3>
                   <p>410-388-2742</p>
                 </div>
-                
+
                 <div style={Style.detailSection}>
                   <h3>Toll Free Fax</h3>
                   <p>800-742-2246</p>
                 </div>
-                
+
                 <div style={Style.detailSection}>
                   <h3>Email</h3>
                   <p>Michele Dosch: michele@bandbwelding.com</p>
                 </div>
-                
+
               </div>
-              
+
               {/* Directions */}
               <div style={Style.right}>
                 <h3>Directions to the Shop</h3>
@@ -65,4 +65,4 @@ class ContactPage extends React.Component {
   }
 }
 
-export default ContactPage;
+export default Radium(ContactPage);
