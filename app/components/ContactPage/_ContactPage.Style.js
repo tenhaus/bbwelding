@@ -29,10 +29,18 @@ export default {
 
   left: {
     width: '30%',
-    marginRight: '10%'
+    marginRight: '10%',
+
+    '@media (max-width: 768px)' : {
+      width: '100%'
+    }
   },
 
   right: {
-    width: '60%'
+    width: '60%',
+
+    '@media (max-width: 768px)' : {
+      width: '100%'
+    }
   }
 };

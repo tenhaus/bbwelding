@@ -14,7 +14,7 @@ class ContactPage extends React.Component {
             <div style={Style.split}>
 
               {/* Contact Details*/}
-              <div style={Style.left}>
+              <div style={Style.left} key='left'>
 
                 <div style={Style.detailSection}>
                   <h3>Mailing Address</h3>
@@ -49,7 +49,7 @@ class ContactPage extends React.Component {
               </div>
 
               {/* Directions */}
-              <div style={Style.right}>
+              <div style={Style.right} key='right'>
                 <h3>Directions to the Shop</h3>
                 <p>From the West or Northwest:</p>
                 <p>Take I-695 South around Baltimore to the Key Bridge. Pay toll then exit onto #43. At head of ramp, turn left onto MD 158 (Beth Blvd). Take MD 158 to MD 151, turn left, go 0.3 miles, immediately after passing under railroad bridge, make right turn into B&B Welding.</p>
