@@ -21,11 +21,11 @@ class CompanyPage extends React.Component {
         <div style={Style.contentWrapper}>
           <div style={Style.content}>
             <h1 style={Style.title}>Our Company</h1>
-              
+
             <div style={Style.topSection}>
-              
+
               {/* Section */}
-              <div style={Style.halfSection}>
+              <div style={Style.halfSection} key='left'>
                 <div style={Style.halfDetail}>
                   <RetinaImage style={Style.image} src={FlameImage} />
                   <p style={Style.flameText}>We took the <em>hardest working</em> people in the steel business and made them <em>smarter</em>.</p>
@@ -37,13 +37,13 @@ class CompanyPage extends React.Component {
               </div>
 
               {/* Section */}
-              <div style={Style.halfSection}>
-                <iframe src="https://player.vimeo.com/video/134711747" 
-                  width="400" height="240" frameborder="0" 
+              <div style={Style.halfSection} key='right'>
+                <iframe src="https://player.vimeo.com/video/134711747"
+                  width="100%" height="240px" frameborder="0"
                   webkitallowfullscreen mozallowfullscreen allowfullscreen />
               </div>
             </div>
-            
+
             {/* Section */}
             <div style={Style.fullSection}>
               <RetinaImage style={Style.image} src={AiscImage} />
