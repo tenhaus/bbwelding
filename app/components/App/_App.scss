@@ -26,7 +26,7 @@
 
 @media screen and (min-width: 375px) {
   .app {
-    width: 375px;
+    width: 100%;
 
     .header {
       padding: 1rem;
@@ -42,7 +42,7 @@
 /* Tablet */
 @media screen and (min-width: 768px) {
   .app {
-    width: 768px;
+    width: 100%;
   }
 }
 
