@@ -22,6 +22,10 @@ class AltActions {
   setSelectedTeamMember(member) {
     this.dispatch(member);
   }
+
+  toggleMobileNav() {
+    this.dispatch();
+  }
 }
 
 export default Alt.createActions(AltActions);

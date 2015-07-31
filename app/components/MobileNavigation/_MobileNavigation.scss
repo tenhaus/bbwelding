@@ -1,32 +1,13 @@
 @import "toolkit";
 
-.wrapper {
-  position: relative;
-  height: 100px;
-  width: 40px;
-  padding-top: 20px;
-}
-
-.mobile-nav-button {
-  display: none;
-  border: none;
-}
-
-.navigation {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
+.mobile-navigation {
+  list-style: none;
 
   li {
-    display: inline-block;
-    margin-left: 2rem;
+    padding: 0.5rem;
 
     a {
-      text-decoration: none;
       color: #fff;
-    }
-    &.-selected a {
-      color: #FF5D5D;
     }
   }
 }
@@ -51,10 +32,6 @@
 /* Desktop */
 @media screen and (min-width: 1024px) {
   .navigation {
-    display: block;
-  }
-
-  .mobile-nav-button {
     display: none;
   }
 }

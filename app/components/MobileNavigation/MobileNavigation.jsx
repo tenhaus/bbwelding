@@ -1,4 +1,4 @@
-import './_Navigation.scss';
+import './_MobileNavigation.scss';
 
 import React from 'react';
 import { Link } from 'react-router';
@@ -7,7 +7,7 @@ import RetinaImage from 'react-retina-image';
 import HamburgerImage from './images/hamburger.png';
 import HamburgerImageRetina from './images/hamburger@2x.png';
 
-class Navigation extends React.Component {
+class MobileNavigation extends React.Component {
 
   constructor(...args) {
     super(...args);
@@ -42,25 +42,21 @@ class Navigation extends React.Component {
   render() {
     let selectedIndex = this.getSelectedIndex();
     return (
-      <div className='wrapper'>
-        <RetinaImage src={HamburgerImage} className='mobile-nav-button'
-          onClick={this.props.onMobileNavButtonClick} />
-        <ul className={'navigation'}>
-          {this.props.pages.map(
-            this.renderNavItem.bind(this, selectedIndex)
-          )}
-        </ul>
-      </div>
+      <ul className='mobile-navigation'>
+        {this.props.pages.map(
+          this.renderNavItem.bind(this, selectedIndex)
+        )}
+      </ul>
     );
   }
 }
 
-Navigation.contextTypes = {
+MobileNavigation.contextTypes = {
   router: React.PropTypes.func.isRequired
 };
 
-Navigation.propTypes = {
+MobileNavigation.propTypes = {
   pages: React.PropTypes.array.isRequired
 };
 
-export default Navigation;
+export default MobileNavigation;

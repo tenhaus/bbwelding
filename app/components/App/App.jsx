@@ -14,13 +14,17 @@ import HandsImageRetina from './images/hands@2x.jpg';
 
 import AltActions from '../../actions/AltActions';
 import NavigationStore from '../../stores/NavigationStore';
+import ResponsiveStore from '../../stores/ResponsiveStore';
+
 import Navigation from '../Navigation/Navigation';
+import MobileNavigation from '../MobileNavigation/MobileNavigation';
 
 var PageBackground = isRetina()? 'url('+HandsImageRetina+')': 'url('+HandsImage+')';
 
 function getState() {
   return {
-    pages: NavigationStore.getAll()
+    pages: NavigationStore.getAll(),
+    responsiveStore: ResponsiveStore.getState()
   };
 }
 
@@ -30,6 +34,22 @@ class App extends React.Component {
     super(...args);
     this.state = getState();
     AltActions.fetchData();
+
+    this.onResponsiveStoreChanged = this.onResponsiveStoreChanged.bind(this);
+  }
+
+  onMobileNavButtonClick() {
+    AltActions.toggleMobileNav();
+  }
+
+  componentDidMount() {
+    ResponsiveStore.listen(this.onResponsiveStoreChanged);
+  }
+
+  onResponsiveStoreChanged() {
+    this.setState({
+      responsiveStore: ResponsiveStore.getState()
+    });
   }
 
   getSelectedPage() {
@@ -55,17 +75,27 @@ class App extends React.Component {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       };
-      
+
       headerStyle = {
         marginBottom: '3rem'
       }
     }
 
+    let mobileNavigation = null;
+
+    if(this.state.responsiveStore.showingMobileNav) {
+      mobileNavigation = <MobileNavigation pages={this.state.pages} />;
+    }
+
     return (
       <div className='app' style={pageStyle}>
+        {mobileNavigation}
         <div className='header' style={headerStyle}>
-          <RetinaImage src={Logo} />
-          <Navigation pages={this.state.pages} />
+          <div className='logo'>
+            <RetinaImage className='logo' src={Logo} />
+          </div>
+          <Navigation pages={this.state.pages}
+            onMobileNavButtonClick={this.onMobileNavButtonClick} />
         </div>
 
         <RouteHandler key={this.context.router.getCurrentPath()} />

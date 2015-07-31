@@ -14,10 +14,28 @@
   }
 }
 
-/* iPhone 6 */
+
+@media screen and (min-width: 200px) {
+  .app {
+    .logo {
+      width: 107px;
+      height: 80px;
+    }
+  }
+}
+
 @media screen and (min-width: 375px) {
   .app {
     width: 375px;
+
+    .header {
+      padding: 1rem;
+    }
+
+    .logo {
+      width: 107px;
+      height: 80px;
+    }
   }
 }
 
@@ -32,6 +50,11 @@
 @media screen and (min-width: 1024px) {
   .app {
     width: 1024px;
+
+    .logo {
+      width: 147px;
+      height: 120px;
+    }
   }
 }
 
