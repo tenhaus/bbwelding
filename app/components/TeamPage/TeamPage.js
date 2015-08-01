@@ -100,21 +100,20 @@ class TeamPage extends React.Component {
       <div className='team-page' style={Style.base}>
         <div className='content' style={Style.content}>
 
-          <div className='member' style={Style.profile} key='profile'
-            onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
+          <div className='member' style={Style.profile} key='profile'>
 
             {/* Heading */}
             <h1 style={Style.title}>
               {member.fields.name}
             </h1>
 
-            <select style={Style.mobileTeamList}
+            <select style={Style.mobileTeamList} key='mobile-nav'
               onChange={this.onMobileMemberChanged}>
               {mobileListItems}
             </select>
 
             {/* Profile */}
-            <div>
+            <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
               <img src={profileImage} style={Style.profileImage}  />
               <div dangerouslySetInnerHTML={{__html:html}} />
             </div>

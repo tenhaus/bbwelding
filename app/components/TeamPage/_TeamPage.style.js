@@ -20,20 +20,25 @@ export default {
     listStyle: 'none',
     marginTop: '5rem',
 
-    '@media (max-width: 400px)' : {
+    '@media (max-width: 768px)' : {
       display: 'none'
     }
   },
 
   mobileTeamList: {
     width: '100%',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    display: 'none',
+
+    '@media (max-width: 768px)' : {
+      display: 'block'
+    }
   },
 
   profile: {
     width: '50%',
 
-    '@media (max-width: 400px)' : {
+    '@media (max-width: 768px)' : {
       width: '100%'
     }
   },
