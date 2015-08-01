@@ -25,6 +25,11 @@ export default {
     }
   },
 
+  mobileTeamList: {
+    width: '100%',
+    marginBottom: '2rem'
+  },
+
   profile: {
     width: '50%',
 
