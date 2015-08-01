@@ -22,7 +22,11 @@ export default {
   },
 
   project: {
-    width: '40%'
+    width: '40%',
+
+    '@media (max-width: 400px)' : {
+      width: '100%'
+    }
   },
 
   projectImage: {
@@ -33,7 +37,11 @@ export default {
   projectList: {
     listStyle: 'none',
     marginTop: '5rem',
-    width: '40%'
+    width: '40%',
+
+    '@media (max-width: 400px)' : {
+      display: 'none'
+    }
   },
 
   projectItem: {

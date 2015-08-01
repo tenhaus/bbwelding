@@ -82,7 +82,8 @@ class WorkPage extends React.Component {
     let images = _.map(project.fields.images, image => {
       var imageSizeStyle = {
         width: image.fields.file.details.image.width,
-        height: image.fields.file.details.image.height,
+        maxWidth: '100%',
+        height: 'auto'
       };
 
       return (
@@ -111,10 +112,10 @@ class WorkPage extends React.Component {
       <div style={Style.base}>
         <div style={Style.contentWrapper}>
           <div style={Style.content}>
-            <div style={Style.project}>
+            <div style={Style.project} key='project'>
               {project}
             </div>
-            <ul style={Style.projectList}>
+            <ul style={Style.projectList} key='project-list'>
               {projectList}
             </ul>
           </div>
