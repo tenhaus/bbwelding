@@ -12,9 +12,15 @@ export default {
     backgroundColor: 'rgba(0,0,0,.5)',
     minHeight: '400px',
     height: '100%',
+    padding: '4rem'
+  },
+
+  split: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '4rem'
+    '@media (max-width: 768px)' : {
+      display: 'block'
+    }
   },
 
   title: {
@@ -24,7 +30,7 @@ export default {
   project: {
     width: '40%',
 
-    '@media (max-width: 400px)' : {
+    '@media (max-width: 768px)' : {
       width: '100%'
     }
   },
@@ -36,11 +42,20 @@ export default {
 
   projectList: {
     listStyle: 'none',
-    marginTop: '5rem',
+    margin: 0,
     width: '40%',
 
-    '@media (max-width: 400px)' : {
+    '@media (max-width: 768px)' : {
       display: 'none'
+    }
+  },
+
+  mobileProjectList: {
+    display: 'none',
+    width: '100%',
+    marginBottom: '2rem',
+    '@media (max-width: 768px)' : {
+      display: 'block'
     }
   },
 

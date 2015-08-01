@@ -17,6 +17,7 @@ class WorkPage extends React.Component {
     super();
     this.onChange = this.onChange.bind(this);
     this.renderProject = this.renderProject.bind(this);
+    this.onMobileProjectListChange = this.onMobileProjectListChange.bind(this);
 
     this.state = {
       entryStore: ContentfulEntryStore.getState(),
@@ -57,25 +58,6 @@ class WorkPage extends React.Component {
     return selectedProject;
   }
 
-  renderList(project) {
-    var self = this;
-
-    return _.map(this.state.entryStore.projects, entry => {
-      var style = {};
-
-      // Highlight the current project
-      if(project &&
-         entry.fields.path === project.fields.path) {
-        style = Style.currentProjectListItem;
-      }
-
-      return (
-        <ProjectListItem style={[Style.projectItem, style]}
-          project={entry} />
-      )
-    });
-  }
-
   renderProject(project) {
     if(!project) return;
 
@@ -95,34 +77,98 @@ class WorkPage extends React.Component {
     let html = Markdown.toHTML(project.fields.description);
     return (
       <div>
-        <h1 style={Style.title}>OUR WORK</h1>
         <div>{images}</div>
         <div dangerouslySetInnerHTML={{__html:html}} />
       </div>
     );
+  }
 
+  renderList(project) {
+    console.log(project);
+    var self = this;
+
+    return _.map(this.state.entryStore.projects, entry => {
+      var style = {};
+
+      // Highlight the current project
+      if(project &&
+         entry.fields.path === project.fields.path) {
+        style = Style.currentProjectListItem;
+      }
+
+      return (
+        <ProjectListItem style={[Style.projectItem, style]}
+          project={entry} />
+      )
+    });
+  }
+
+  renderMobileProjectList(project) {
+    var self = this;
+
+    return _.map(this.state.entryStore.projects, entry => {
+      let option = null;
+
+      // Highlight the current project
+      if(project && entry.fields.path === project.fields.path) {
+        option = <option selected value={entry.fields.path}>{entry.fields.project}</option>;
+      }
+      else {
+        option = <option value={entry.fields.path}>{entry.fields.project}</option>;
+      }
+
+      return option;
+    });
+  }
+
+  onMobileProjectListChange(event) {
+    var path = event.target.value;
+    this.context.router.transitionTo('/work/' + path);
   }
 
   render() {
     let currentProject = this.getCurrentProject();
     let projectList = this.renderList(currentProject);
+    let mobileProjectList = this.renderMobileProjectList(currentProject);
     let project = this.renderProject(currentProject);
 
     return (
       <div style={Style.base}>
         <div style={Style.contentWrapper}>
-          <div style={Style.content}>
-            <div style={Style.project} key='project'>
-              {project}
+
+          <div style={Style.content} key='content'>
+
+            {/* Heading */}
+            <h1 style={Style.title}>OUR WORK</h1>
+
+            <div style={Style.split} key='split'>
+              {/* Mobile Navigation */}
+              <select onChange={this.onMobileProjectListChange}
+                style={Style.mobileProjectList}>
+                {mobileProjectList}
+              </select>
+
+              {/* Project */}
+              <div style={Style.project} key='project'>
+                {project}
+              </div>
+
+              {/* Navigation */}
+              <ul style={Style.projectList} key='project-list'>
+                {projectList}
+              </ul>
             </div>
-            <ul style={Style.projectList} key='project-list'>
-              {projectList}
-            </ul>
+
           </div>
+
         </div>
       </div>
     );
   }
 }
+
+WorkPage.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
 
 export default Radium(WorkPage);
