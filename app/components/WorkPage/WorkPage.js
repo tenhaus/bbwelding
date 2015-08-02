@@ -84,7 +84,6 @@ class WorkPage extends React.Component {
   }
 
   renderList(project) {
-    console.log(project);
     var self = this;
 
     return _.map(this.state.entryStore.projects, entry => {

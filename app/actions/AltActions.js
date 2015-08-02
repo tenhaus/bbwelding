@@ -9,7 +9,8 @@ var client = require('contentful-agent')({
 
 var contentTypes = {
   projects: '3W9hNwuc8EKcosagC0GuGE',
-  team: '4pbkhrIx5Co2QYoMKC2cqu'
+  team: '4pbkhrIx5Co2QYoMKC2cqu',
+  steelDayContent: '62PK9zHWBqGiqKEU8Cgg4U'
 };
 
 class AltActions {

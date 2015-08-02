@@ -6,6 +6,8 @@ class ProjectStore {
   constructor() {
     this.projects = [];
     this.team = [];
+    this.steelDayContent = null;
+
     this.selectedTeamMember = {
       fields: {
         name: '',
@@ -35,6 +37,7 @@ class ProjectStore {
   handleFetchData(content) {
     this.projects = content.projects;
     this.team = content.team;
+    this.steelDayContent = content.steelDayContent[0];
 
     if(this.team.length > 0) {
       this.selectedTeamMember = this.team[0];
