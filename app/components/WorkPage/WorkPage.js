@@ -9,7 +9,8 @@ var Markdown = require( "markdown" ).markdown;
 import ProjectListItem from '../ProjectListItem/ProjectListItem';
 import ContentfulEntryStore from '../../stores/ContentfulEntryStore';
 
-import Style from './_WorkPage';
+import Page from '../Page/Page';
+import Style from './_WorkPage.Style';
 
 class WorkPage extends React.Component {
 
@@ -132,36 +133,27 @@ class WorkPage extends React.Component {
     let project = this.renderProject(currentProject);
 
     return (
-      <div style={Style.base}>
-        <div style={Style.contentWrapper}>
+      <Page title='Our Work'>
 
-          <div style={Style.content} key='content'>
+        <div style={Style.split} key='split'>
+          {/* Mobile Navigation */}
+          <select onChange={this.onMobileProjectListChange}
+            style={Style.mobileProjectList}>
+            {mobileProjectList}
+          </select>
 
-            {/* Heading */}
-            <h1 style={Style.title}>OUR WORK</h1>
-
-            <div style={Style.split} key='split'>
-              {/* Mobile Navigation */}
-              <select onChange={this.onMobileProjectListChange}
-                style={Style.mobileProjectList}>
-                {mobileProjectList}
-              </select>
-
-              {/* Project */}
-              <div style={Style.project} key='project'>
-                {project}
-              </div>
-
-              {/* Navigation */}
-              <ul style={Style.projectList} key='project-list'>
-                {projectList}
-              </ul>
-            </div>
-
+          {/* Project */}
+          <div style={Style.project} key='project'>
+            {project}
           </div>
 
+          {/* Navigation */}
+          <ul style={Style.projectList} key='project-list'>
+            {projectList}
+          </ul>
         </div>
-      </div>
+
+      </Page>
     );
   }
 }
