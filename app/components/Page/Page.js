@@ -7,7 +7,7 @@ class Page extends React.Component {
 
   render() {
     return (
-      <div className='page' style={Style.base}>
+      <div className='page' style={Style.base} key='page'>
         <div id="contact-page" style={Style.base}>
           <div style={Style.contentWrapper}>
             <div style={Style.content}>

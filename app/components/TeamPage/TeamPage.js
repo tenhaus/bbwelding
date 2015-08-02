@@ -3,6 +3,7 @@ import Radium from 'radium';
 import _ from 'lodash';
 
 import Style from './_TeamPage.style.js';
+import Page from '../Page/Page';
 
 import ContentfulEntryStore from '../../stores/ContentfulEntryStore';
 import TeamListItemRenderer from '../TeamListItemRenderer/TeamListItemRenderer';
@@ -97,15 +98,10 @@ class TeamPage extends React.Component {
     }
 
     return (
-      <div className='team-page' style={Style.base}>
-        <div className='content' style={Style.content}>
+      <Page title={member.fields.name}>
 
+        <div style={Style.split} key='split'>
           <div className='member' style={Style.profile} key='profile'>
-
-            {/* Heading */}
-            <h1 style={Style.title}>
-              {member.fields.name}
-            </h1>
 
             <select style={Style.mobileTeamList} key='mobile-nav'
               onChange={this.onMobileMemberChanged}>
@@ -115,7 +111,7 @@ class TeamPage extends React.Component {
             {/* Profile */}
             <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
               <img src={profileImage} style={Style.profileImage}  />
-              <div dangerouslySetInnerHTML={{__html:html}} />
+              <div dangerouslySetInnerHTML={{__html:html}}></div>
             </div>
           </div>
 
@@ -125,10 +121,8 @@ class TeamPage extends React.Component {
               {listItems}
             </ul>
           </div>
-
         </div>
-
-      </div>
+      </Page>
     );
   }
 }

@@ -1,24 +1,15 @@
 export default {
 
-  base: {
-    color: '#fff',
-  },
-
-  content: {
+  split: {
     display: 'flex',
     justifyContent: 'space-between',
-    backgroundColor: 'rgba(0,0,0,.5)',
-    padding: '4rem',
-  },
-
-  title: {
-    fontWeight: 'normal',
-    marginBottom: '2rem'
+    '@media (max-width: 768px)' : {
+      display: 'block'
+    }
   },
 
   teamList: {
     listStyle: 'none',
-    marginTop: '5rem',
 
     '@media (max-width: 768px)' : {
       display: 'none'
