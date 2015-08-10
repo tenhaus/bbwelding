@@ -19,6 +19,7 @@ class TeamListItemRenderer extends React.Component {
   render() {
     let member = this.props.member;
     let profileImage = member.fields.primaryImage.fields.file.url;
+    profileImage += '?w=100&fm=jpg&q=75';
 
     return (
       <li className='team-list-item' style={Style.base}

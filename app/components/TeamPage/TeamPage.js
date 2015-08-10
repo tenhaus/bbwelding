@@ -91,10 +91,16 @@ class TeamPage extends React.Component {
     let member = this.state.entryStore.selectedTeamMember;
     let html = Markdown.toHTML(member.fields.biography);
 
-    let profileImage = member.fields.primaryImage.fields.file.url;
+    let profileImage = null;
 
-    if(this.state.showSecondary) {
+    if(member.fields.primaryImage) {
+      profileImage = member.fields.primaryImage.fields.file.url;
+      profileImage += '?w=600&fm=jpg&q=75';
+    }
+
+    if(this.state.showSecondary && member.fields.secondaryImage) {
       profileImage = member.fields.secondaryImage.fields.file.url;
+      profileImage += '?w=600&fm=jpg&q=75';
     }
 
     return (
