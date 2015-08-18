@@ -27,6 +27,10 @@ class AltActions {
   toggleMobileNav() {
     this.dispatch();
   }
+
+  submitSteelDayForm(name, url, email, phone) {
+    console.log('submit');
+  }
 }
 
 export default Alt.createActions(AltActions);

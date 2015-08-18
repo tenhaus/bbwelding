@@ -2,6 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import _ from 'lodash';
 
+import AltActions from '../../actions/AltActions';
 import Page from '../Page/Page';
 import Style from './_SteelDayPage.Style';
 
@@ -48,6 +49,13 @@ class SteelDayPage extends React.Component {
 
     // Validation didn't pass
     if(name || email || phone) return;
+
+    AltActions.submitSteelDayForm(
+      this.state.name,
+      this.state.url,
+      this.state.email,
+      this.state.phone
+    );
   }
 
   renderFormErrors() {
