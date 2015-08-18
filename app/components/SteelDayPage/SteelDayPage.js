@@ -1,12 +1,74 @@
 import React from 'react';
 import Radium from 'radium';
+import _ from 'lodash';
 
 import Page from '../Page/Page';
 import Style from './_SteelDayPage.Style';
 
 class SteelDayPage extends React.Component {
 
+  constructor() {
+    super();
+
+    this.onFormChanged = this.onFormChanged.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+    this.renderFormErrors = this.renderFormErrors.bind(this);
+
+    this.state = {
+      name: '',
+      showNameError: false,
+      url: '',
+      email: '',
+      showEmailError: false,
+      phone: '',
+      showPhoneError: false
+    };
+  }
+
+  onFormChanged() {
+    this.setState({
+      name: React.findDOMNode(this.refs.nameInput).value,
+      url: React.findDOMNode(this.refs.urlInput).value,
+      email: React.findDOMNode(this.refs.emailInput).value,
+      phone: React.findDOMNode(this.refs.phoneInput).value,
+    });
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+    var name = this.state.name.trim().length === 0;
+    var email = this.state.email.trim().length === 0;
+    var phone = this.state.phone.trim().length === 0;
+
+    this.setState({
+      showNameError: name,
+      showEmailError: email,
+      showPhoneError: phone
+    });
+
+    // Validation didn't pass
+    if(name || email || phone) return;
+  }
+
+  renderFormErrors() {
+    if(this.state.showNameError || this.state.showEmailError || this.state.showPhoneError) {
+      return (
+       <div style={Style.errorContent}>
+         <p>Registration failed</p>
+         <ul>
+           {this.state.showNameError ? <li>Please provide a name</li> : null}
+           {this.state.showPhoneError ? <li>Please provide your phone number</li> : null}
+           {this.state.showEmailError ? <li>Please provide your email address</li> : null}
+         </ul>
+       </div>
+      );
+    }
+  }
+
   render() {
+
+    let formErrors = this.renderFormErrors();
+
     return (
       <Page title='Register now for Steel Day 2015!'>
         <div style={Style.content}>
@@ -24,32 +86,39 @@ class SteelDayPage extends React.Component {
 
             <h2>Register Here</h2>
 
+            {formErrors}
+
             <form>
               <div className='control-group required'>
-                <label for='name'>Name</label>
-                <input id='name' value={this.state.name} />
+                <label htmlFor='name'>Name</label>
+                <input id='name' value={this.state.name} ref='nameInput'
+                  onChange={this.onFormChanged} />
                 <p className='hint'>Name is mandatory</p>
               </div>
 
               <div className='control-group'>
-                <label for='url'>Url</label>
-                <input id='url' />
+                <label htmlFor='url'>Url</label>
+                <input id='url' value={this.state.url} ref='urlInput'
+                  onChange={this.onFormChanged} />
                 <p className='hint'>Your primary site</p>
               </div>
 
               <div className='control-group required'>
-                <label for='email'>Email</label>
-                <input id='email' />
+                <label htmlFor='email'>Email</label>
+                <input id='email' value={this.state.email} ref='emailInput'
+                  onChange={this.onFormChanged} />
                 <p className='hint'>Your email will not be published</p>
               </div>
 
               <div className='control-group required'>
-                <label for='phone'>Phone</label>
-                <input id='phone' />
+                <label htmlFor='phone'>Phone</label>
+                <input id='phone' value={this.state.phone} ref='phoneInput'
+                  onChange={this.onFormChanged} />
                 <p className='hint'>Mobile or land-line</p>
               </div>
 
-              <button style={Style.button} type='submit'>Register</button>
+              <button style={Style.button} type='submit'
+                onClick={this.submitForm}>Register</button>
 
             </form>
 

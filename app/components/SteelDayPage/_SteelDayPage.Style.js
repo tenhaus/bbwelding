@@ -5,7 +5,7 @@ export default {
   },
 
   formContent: {
-    marginTop: '1rem'
+    marginTop: '3rem'
   },
 
   lineHead: {
@@ -15,5 +15,9 @@ export default {
 
   button: {
     color: '#000'
+  },
+
+  errorContent: {
+    color: '#FF5D5D'
   }
 };
