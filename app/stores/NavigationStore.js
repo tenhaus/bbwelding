@@ -43,6 +43,10 @@ store.setAll([
   {
     route: 'contact',
     title: 'Contact'
+  },
+  {
+    route: 'steel-day',
+    title: 'Steel Day 2015'
   }
 ]);
 
