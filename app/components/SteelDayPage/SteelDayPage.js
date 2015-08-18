@@ -3,6 +3,8 @@ import Radium from 'radium';
 import _ from 'lodash';
 
 import AltActions from '../../actions/AltActions';
+import SteelDayStore from '../../stores/SteelDayStore';
+
 import Page from '../Page/Page';
 import Style from './_SteelDayPage.Style';
 

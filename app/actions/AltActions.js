@@ -1,6 +1,7 @@
 'use strict'
 import Alt from '../alt';
 import Contentful from 'contentful-agent';
+import request from 'superagent';
 
 var client = require('contentful-agent')({
   space: 'lxziqch8v8yh',
@@ -29,7 +30,35 @@ class AltActions {
   }
 
   submitSteelDayForm(name, url, email, phone) {
-    console.log('submit');
+    var toEmail = 'name: ' + name + ' email: ' + email + ' phone ' + phone + ' url: ' + url;
+
+    var data = {
+      'key': 'vSvSsvW65FgK3AY0Ru-tcQ',
+      'message': {
+        'from_email': 'info@bandbwelding.com',
+        'to': [
+            {
+              'email': 'chayen@gmail.com',
+              'name': 'Chris Hayen',
+              'type': 'to'
+            },
+            // {
+            //   'email': 'rrytter@jensendesignstudio.com',
+            //   'name': 'Robert Rytter',
+            //   'type': 'to'
+            // }
+          ],
+        'autotext': 'true',
+        'subject': 'Steel Day Registration',
+        'html': toEmail
+      }
+    };
+
+    request.post('https://mandrillapp.com/api/1.0/messages/send.json')
+      .send(data)
+      .end((err, response) => {
+        this.dispatch(true);
+      });
   }
 }
 
