@@ -16,6 +16,8 @@ class SteelDayPage extends React.Component {
     this.onFormChanged = this.onFormChanged.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.renderFormErrors = this.renderFormErrors.bind(this);
+    this.renderForm = this.renderForm.bind(this);
+    this.onRegistrationChanged = this.onRegistrationChanged.bind(this);
 
     this.state = {
       name: '',
@@ -24,8 +26,23 @@ class SteelDayPage extends React.Component {
       email: '',
       showEmailError: false,
       phone: '',
-      showPhoneError: false
+      showPhoneError: false,
+      store: SteelDayStore.getState()
     };
+  }
+
+  componentDidMount() {
+    SteelDayStore.listen(this.onRegistrationChanged);
+  }
+
+  componentWillUnmount() {
+    SteelDayStore.unlisten(this.onRegistrationChanged);
+  }
+
+  onRegistrationChanged() {
+    this.setState({
+      store: SteelDayStore.getState()
+    });
   }
 
   onFormChanged() {
@@ -75,9 +92,69 @@ class SteelDayPage extends React.Component {
     }
   }
 
-  render() {
-
+  renderForm() {
     let formErrors = this.renderFormErrors();
+
+    return (
+      <div style={Style.formContent}>
+
+        <h2>Register Here</h2>
+
+        {formErrors}
+
+        <form>
+          <div className='control-group required'>
+            <label htmlFor='name'>Name</label>
+            <input id='name' value={this.state.name} ref='nameInput'
+              onChange={this.onFormChanged} />
+            <p className='hint'>Name is mandatory</p>
+          </div>
+
+          <div className='control-group'>
+            <label htmlFor='url'>Url</label>
+            <input id='url' value={this.state.url} ref='urlInput'
+              onChange={this.onFormChanged} />
+            <p className='hint'>Your primary site</p>
+          </div>
+
+          <div className='control-group required'>
+            <label htmlFor='email'>Email</label>
+            <input id='email' value={this.state.email} ref='emailInput'
+              onChange={this.onFormChanged} />
+            <p className='hint'>Your email will not be published</p>
+          </div>
+
+          <div className='control-group required'>
+            <label htmlFor='phone'>Phone</label>
+            <input id='phone' value={this.state.phone} ref='phoneInput'
+              onChange={this.onFormChanged} />
+            <p className='hint'>Mobile or land-line</p>
+          </div>
+
+          <button style={Style.button} type='submit'
+            onClick={this.submitForm}>Register</button>
+
+        </form>
+
+      </div>
+    );
+  }
+
+  renderConfirmation() {
+    return (
+      <h1 style={Style.confirmation}>Thank you for registering!</h1>
+    );
+  }
+
+  render() {
+    let registrationContent = null;
+
+    if(this.state.store.registered) {
+      registrationContent = this.renderConfirmation();
+    }
+    else {
+      registrationContent = this.renderForm();
+    }
 
     return (
       <Page title='Register now for Steel Day 2015!'>
@@ -92,47 +169,7 @@ class SteelDayPage extends React.Component {
           <p><span style={Style.lineHead}>Dress Code:</span>Business casual/jeans welcome. (Ladies no open toed or high heeled shoes)</p>
           <p><span style={Style.lineHead}>Safety Gear:</span>Long pants and closed toe shoes required for facility tours. (safety glasses will be provided)</p>
 
-          <div style={Style.formContent}>
-
-            <h2>Register Here</h2>
-
-            {formErrors}
-
-            <form>
-              <div className='control-group required'>
-                <label htmlFor='name'>Name</label>
-                <input id='name' value={this.state.name} ref='nameInput'
-                  onChange={this.onFormChanged} />
-                <p className='hint'>Name is mandatory</p>
-              </div>
-
-              <div className='control-group'>
-                <label htmlFor='url'>Url</label>
-                <input id='url' value={this.state.url} ref='urlInput'
-                  onChange={this.onFormChanged} />
-                <p className='hint'>Your primary site</p>
-              </div>
-
-              <div className='control-group required'>
-                <label htmlFor='email'>Email</label>
-                <input id='email' value={this.state.email} ref='emailInput'
-                  onChange={this.onFormChanged} />
-                <p className='hint'>Your email will not be published</p>
-              </div>
-
-              <div className='control-group required'>
-                <label htmlFor='phone'>Phone</label>
-                <input id='phone' value={this.state.phone} ref='phoneInput'
-                  onChange={this.onFormChanged} />
-                <p className='hint'>Mobile or land-line</p>
-              </div>
-
-              <button style={Style.button} type='submit'
-                onClick={this.submitForm}>Register</button>
-
-            </form>
-
-          </div>
+          {registrationContent}
 
         </div>
       </Page>

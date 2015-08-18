@@ -19,5 +19,9 @@ export default {
 
   errorContent: {
     color: '#FF5D5D'
+  },
+
+  confirmation: {
+    marginTop: '3rem'
   }
 };
