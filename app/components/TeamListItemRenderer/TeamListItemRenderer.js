@@ -17,8 +17,13 @@ class TeamListItemRenderer extends React.Component {
   }
 
   render() {
+
     let member = this.props.member;
-    let profileImage = member.fields.primaryImage.fields.file.url;
+    let profileImage = '';
+
+    if(member.fields.primaryImage.hasOwnProperty('fields')) {
+      profileImage = member.fields.primaryImage.fields.file.url;
+    }
     profileImage += '?w=100&fm=jpg&q=75';
 
     return (
