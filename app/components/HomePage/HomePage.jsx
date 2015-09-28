@@ -17,7 +17,6 @@ class HomePage extends React.Component {
         <div className='copy'>
           <h1>The smartest working shop in the steel business</h1>
           <p>ONE &quot;B&quot; FOR BRAINS; ONE &quot;B&quot; FOR BRAWN.</p>
-          <a className='steel-day-link' href='/#/steel-day'>Register now for Steel Day 2015!</a>
         </div>
 
       </div>
