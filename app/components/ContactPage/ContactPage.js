@@ -42,6 +42,7 @@ class ContactPage extends React.Component {
             <div style={Style.detailSection}>
               <h3>Email</h3>
               <p>Michele Dosch: michele@bandbwelding.com</p>
+              <p>Estimating - Dave Mills Sr: dave@bandbwelding.com</p>
             </div>
 
           </div>
