@@ -5,8 +5,8 @@ import './_HomePage.scss';
 import React from 'react';
 import RetinaImage from 'react-retina-image';
 
-import AbstractImage from './images/abstract.png';
-import AbstractImageRetina from './images/abstract@2x.png';
+import AbstractImage from './images/abstract.jpg';
+import AbstractImageRetina from './images/abstract@2x.jpg';
 
 class HomePage extends React.Component {
 
