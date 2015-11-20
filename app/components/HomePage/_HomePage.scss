@@ -10,6 +10,8 @@
     position: absolute;
     color: #fff;
     text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    padding: 1rem;
 
     h1 {
       font-family: 'Raleway', sans-serif;
@@ -36,9 +38,9 @@
 /* iPhone 5 */
 @media screen and (min-width: 320px) {
   .copy {
-    width: 70%;
-    left: 40px;
-    top: 220px;
+    width: 90%;
+    left: 0px;
+    top: 20px;
     h1 {
       font-size: 1.5rem;
     }
@@ -48,9 +50,10 @@
 /* iPhone 6 */
 @media screen and (min-width: 375px) {
   .copy {
-    width: 70%;
-    left: 50px;
-    top: 280px;
+    width: 90%;
+    left: 0px;
+    top: 100px;
+
     h1 {
       font-size: 1.5rem;
     }
@@ -60,13 +63,13 @@
 /* Tablet */
 @media screen and (min-width: 768px) {
   .copy {
-    width: 24rem;
-    top: 318px;
-    left: 11px;
+    width: 90%;
+    top: 160px;
+    left: 0px;
 
     h1 {
-      font-size: 2.0rem;
-      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -74,13 +77,13 @@
 /* Desktop */
 @media screen and (min-width: 1024px) {
   .copy {
-    width: 24rem;
-    top: 390px;
-    left: 121px;
+    width: 90%;
+    top: 150px;
+    left: 0px;
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -89,16 +92,16 @@
 @media screen and (min-width: 1440px) {
   .home-page {
     .welder-image {
-      position: absolute;
-      top: -90px;
-      right: -130px;
-      width: 90%;
+      // position: absolute;
+      // top: -90px;
+      // right: -130px;
+      // width: 90%;
     }
 
     .copy {
-      width: 34rem;
+      width: 90%;
       top: 270px;
-      left: 111px;
+      left: 0px;
 
       h1 {
         font-family: 'Raleway', sans-serif;
