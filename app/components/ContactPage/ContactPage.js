@@ -43,6 +43,7 @@ class ContactPage extends React.Component {
               <h3>Email</h3>
               <p>Michele Dosch: michele@bandbwelding.com</p>
               <p>Estimating - Dave Mills Sr: dave@bandbwelding.com</p>
+              <p>Tiffany Heron, Administrative Assistant tiffany@bandbwelding.com</p>
             </div>
 
           </div>
