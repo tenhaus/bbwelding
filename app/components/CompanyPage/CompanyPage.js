@@ -19,8 +19,11 @@ class CompanyPage extends React.Component {
     return (
       <Page title='Our Company'>
 
+        <div style={Style.fullSection}>
+          <p>B&amp;B Welding Company is a 52 year old firm (45 years under current ownership) that has migrated from a portable welding shop to the Baltimore/Washington area’s most technologically advanced steel fabricator.</p>
+        </div>
+        
         <div style={Style.topSection}>
-
           {/* Section */}
           <div style={Style.halfSection} key='left'>
             <div style={Style.halfDetail}>
@@ -35,9 +38,11 @@ class CompanyPage extends React.Component {
 
           {/* Section */}
           <div style={Style.halfSection} key='right'>
-            <iframe src="https://player.vimeo.com/video/136650292"
-              width="100%" height="240px" frameborder="0"
-              webkitallowfullscreen mozallowfullscreen allowfullscreen />
+            <div style={Style.videoBox}>
+              <iframe src="https://player.vimeo.com/video/136650292"
+                width="100%" height="240px" frameborder="0"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen />
+              </div>
           </div>
         </div>
 

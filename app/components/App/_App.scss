@@ -1,5 +1,13 @@
 @import "toolkit";
 
+.email{
+  text-decoration: none;
+  color: #fff;
+  &:hover{
+    color: darken(#fff, 50%);
+  }
+}
+
 .app {
   width: 320px;
   height: 100%;
