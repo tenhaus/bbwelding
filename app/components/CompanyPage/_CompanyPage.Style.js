@@ -17,14 +17,6 @@ export default {
     }
   },
 
-  videoBox: {
-    marginTop: '1rem',
-    
-    '@media (max-width: 768px)' : {
-      marginTop: '0rem'
-    }
-  },
-
   halfDetail: {
     height: 75,
     marginBottom: '4rem',

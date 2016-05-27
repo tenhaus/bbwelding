@@ -38,7 +38,7 @@ class CompanyPage extends React.Component {
 
           {/* Section */}
           <div style={Style.halfSection} key='right'>
-            <div style={Style.videoBox}>
+            <div className="video-box">
               <iframe src="https://player.vimeo.com/video/136650292"
                 width="100%" height="240px" frameborder="0"
                 webkitallowfullscreen mozallowfullscreen allowfullscreen />
