@@ -46,6 +46,7 @@ class ContactPage extends React.Component {
               <p>Dave Mills, Estimator, <a className="email" href="mailto:dave@bandbwelding.com">dave@bandbwelding.com</a></p>
               <p>Michele Dosch, Office Manager, <a className="email" href="mailto:michele@bandbwelding.com">michele@bandbwelding.com</a></p>
               <p>Tiffany Heron, Administrative Asst., <a className="email" href="mailto:tiffany@bandbwelding.com">tiffany@bandbwelding.com</a></p>
+              <p>Dennis McCartney, VP <a className="email" href="mailto:drmc@bandbwelding.com">drmc@bandbwelding.com</a></p>
             </div>
 
           </div>

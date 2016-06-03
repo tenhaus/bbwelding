@@ -11,6 +11,8 @@ var client = require('contentful-agent')({
 var contentTypes = {
   projects: '3W9hNwuc8EKcosagC0GuGE',
   team: '4pbkhrIx5Co2QYoMKC2cqu',
+  shop: 'shop',
+  // news: 'homeNews',
   steelDayContent: '62PK9zHWBqGiqKEU8Cgg4U'
 };
 
@@ -24,6 +26,14 @@ class AltActions {
   setSelectedTeamMember(member) {
     this.dispatch(member);
   }
+
+  setSelectedShopItem(item) {
+    this.dispatch(item);
+  }
+
+  // setSelectedHomeNews(news) {
+  //   this.dispatch(news);
+  // }
 
   toggleMobileNav() {
     this.dispatch();

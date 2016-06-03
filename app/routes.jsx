@@ -12,6 +12,7 @@ import WorkPage from './components/WorkPage/WorkPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import TeamPage from './components/TeamPage/TeamPage';
 import SteelDayPage from './components/SteelDayPage/SteelDayPage';
+import ShopPage from './components/ShopPage/ShopPage';
 
 export default (
   <Route handler={App}>
@@ -21,6 +22,7 @@ export default (
     <Route handler={WorkPage} name="work" path="/work">
       <Route handler={WorkPage} path="/work/:project" />
     </Route>
+    <Route handler={ShopPage} name="shop" path="/shop"/>
     <Route handler={SteelDayPage} name='steel-day' path='/steel-day' />
     <DefaultRoute handler={HomePage} name="home" />
   </Route>

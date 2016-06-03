@@ -20,7 +20,7 @@ class CompanyPage extends React.Component {
       <Page title='Our Company'>
 
         <div style={Style.fullSection}>
-          <p>B&amp;B Welding Company is a 52 year old firm (45 years under current ownership) that has migrated from a portable welding shop to the Baltimore/Washington area’s most technologically advanced steel fabricator.</p>
+          <p>B&amp;B Welding Company is a 52 year old firm (45 years under current ownership) that has migrated from a portable welding shop to the Baltimore/Washington area’s most technologically advanced steel fabricator. </p>
         </div>
         
         <div style={Style.topSection}>

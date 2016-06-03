@@ -1,7 +1,6 @@
 'use strict';
 
 import './_App.scss';
-
 import React from 'react';
 import RetinaImage from 'react-retina-image';
 import isRetina from 'is-retina';
@@ -9,8 +8,16 @@ import {RouteHandler} from 'react-router';
 
 import Logo from './images/logo.png';
 import LogoRetina from './images/logo@2x.png';
-import HandsImage from './images/hands.jpg';
-import HandsImageRetina from './images/hands@2x.jpg';
+import shopImage from './images/our-shop.jpg';
+import shopImageRetina from './images/our-shop@2x.jpg';
+import teamImage from './images/our-team-photo.jpg';
+import teamImageRetina from './images/our-team-photo@2x.jpg';
+import companyImage from './images/our-company.jpg';
+import companyImageRetina from './images/our-company@2x.jpg';
+import workImage from './images/our-work.jpg';
+import workImageRetina from './images/our-work@2x.jpg';
+import contactImage from './images/welder.jpg';
+import contactRetinaImage from './images/welder@2x.jpg';
 
 import AltActions from '../../actions/AltActions';
 import NavigationStore from '../../stores/NavigationStore';
@@ -19,14 +26,17 @@ import ResponsiveStore from '../../stores/ResponsiveStore';
 import Navigation from '../Navigation/Navigation';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
 
-var PageBackground = isRetina()? 'url('+HandsImageRetina+')': 'url('+HandsImage+')';
-
 function getState() {
   return {
     pages: NavigationStore.getAll(),
     responsiveStore: ResponsiveStore.getState()
   };
 }
+
+var ShopPageBackground = isRetina()? 'url('+ shopImageRetina +')': 'url('+ shopImage +')',
+    TeamPageBackground = isRetina()? 'url('+ teamImageRetina +')': 'url('+ teamImage +')',
+    CompanyPageBackground = isRetina()? 'url('+ companyImageRetina +')': 'url('+ companyImage +')',
+    WorkPageBackground = isRetina()? 'url('+ workImageRetina +')': 'url('+ workImage +')';
 
 class App extends React.Component {
 
@@ -69,17 +79,59 @@ class App extends React.Component {
     var headerStyle = null;
     var selectedPage = this.getSelectedPage();
 
-    if(selectedPage.route !== 'home') {
+    if(selectedPage.route === 'shop') {
       pageStyle = {
-        backgroundImage: PageBackground,
+        backgroundImage: ShopPageBackground,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       };
 
       headerStyle = {
         marginBottom: '3rem'
       }
     }
+
+    if(selectedPage.route === 'team') {
+      pageStyle = {
+        backgroundImage: TeamPageBackground,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      };
+
+      headerStyle = {
+        marginBottom: '3rem'
+      }
+    }
+
+    if(selectedPage.route === 'work') {
+      pageStyle = {
+        backgroundImage: WorkPageBackground,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      };
+
+      headerStyle = {
+        marginBottom: '3rem'
+      }
+    }
+
+    if(selectedPage.route === 'company') {
+      pageStyle = {
+        backgroundImage: CompanyPageBackground,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      };
+
+      headerStyle = {
+        marginBottom: '3rem'
+      }
+    }
+
+
 
     let mobileNavigation = null;
 

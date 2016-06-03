@@ -21,6 +21,7 @@ class HomePage extends React.Component {
           <p>and B&amp;B Welding CELEBRATION - 45 Years of Excellence</p>
         </div>
       </div>
+ 
     );
   }
 }

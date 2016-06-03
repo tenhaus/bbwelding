@@ -33,6 +33,10 @@ store.setAll([
     title: 'Our Company'
   },
   {
+    route: 'shop',
+    title: 'Our Shop'
+  },
+  {
     route: 'team',
     title: 'Our Team'
   },
