@@ -20,8 +20,14 @@ class HomePage extends React.Component {
           <h1>AISC STEEL DAY</h1>
           <p>and B&amp;B Welding CELEBRATION - 45 Years of Excellence</p>
         </div>
+        <div className="full-section">
+        <div className="news-section">
+          <h2>Big News</h2>
+          <p>We now have a major role in the emergency repairs of the Peninsula Bridge across Bear Creek. 
+We partner with Covington Machine and SHA engineers make the fix and get the bridge open again.</p>
+        </div>
       </div>
- 
+      </div>
     );
   }
 }
