@@ -13,9 +13,11 @@ import ContactPage from './components/ContactPage/ContactPage';
 import TeamPage from './components/TeamPage/TeamPage';
 import SteelDayPage from './components/SteelDayPage/SteelDayPage';
 import ShopPage from './components/ShopPage/ShopPage';
+import NewsPage from './components/NewsPage/NewsPage';
 
 export default (
   <Route handler={App}>
+    <Route handler={NewsPage} name="news" path="/news" />
     <Route handler={CompanyPage} name="company" path="/company" />
     <Route handler={ContactPage} name="contact" path="/contact" />
     <Route handler={TeamPage} name="team" path="/team" />
