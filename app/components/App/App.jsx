@@ -19,7 +19,7 @@ import workImageRetina from './images/our-work@2x.jpg';
 import contactImage from './images/welder.jpg';
 import contactRetinaImage from './images/welder@2x.jpg';
 import newsImage from './images/news.jpg';
-import newsRetinaImage from './images/news@2x.jpg';
+import newsImageRetina from './images/news@2x.jpg';
 
 import AltActions from '../../actions/AltActions';
 import NavigationStore from '../../stores/NavigationStore';

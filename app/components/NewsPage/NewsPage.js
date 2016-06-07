@@ -2,11 +2,10 @@ import React from 'react';
 import Radium from 'radium';
 import _ from 'lodash';
 
-import Style from './_NewsPage.Style';
+import Style from './_NewsPage.style.js';
 import Page from '../Page/Page';
 
 import ContentfulEntryStore from '../../stores/ContentfulEntryStore';
-import NewsListItem from '../NewsListItem/NewsListItem';
 
 import AltActions from '../../actions/AltActions';
 
@@ -17,13 +16,9 @@ class NewsPage extends React.Component {
   constructor() {
     super();
     this.onChange = this.onChange.bind(this);
-    this.renderNewsItem = this.renderNewsItem.bind(this);
-    this.renderMobileListItems = this.renderMobileListItems.bind(this);
-    this.onMobileNewsListChanged = this.onMobileNewsListChanged.bind(this);
 
     this.state = {
-      entryStore: ContentfulEntryStore.getState(),
-      news: null
+      entryStore: ContentfulEntryStore.getState()
     };
   }
 
@@ -35,79 +30,49 @@ class NewsPage extends React.Component {
     ContentfulEntryStore.unlisten(this.onChange);
   }
 
-  onChange(news) {
+  onChange(entryStore) {
     this.setState({
       entryStore: entryStore
     });
   }
 
-  onMobileNewsListChanged(event) {
-    var name = event.target.value;
-    var news = _.findWhere(this.state.entryStore.news, {fields: {name: title}});
-    AltActions.setSelectedNewsItem(news);
-  }
 
-  renderNewsList(){
-    return _.map(this.state.entryStore.news, item => {
-      return <NewsListItem key={item.fields.title} item={item} />;
-    });
+  renderListItems() {
 
-  }
-
-  renderMobileNewsList() {
-    var self = this;
-
-    var selectedNewsItemTitle = self.state.entryStore.selectedNewsItem.fields.title;
-
-    return _.map(this.state.entryStore.news, item => {
-     let option = (
-        <option key={item.fields.title} value={item.fields.title}>
-          {item.fields.title}
-        </option>
+    return _.map(this.state.entryStore.news, news => {
+      let html = Markdown.toHTML(news.fields.content);
+      console.log(news)
+      return (
+        <div>
+           <h3>{news.fields.title}</h3> 
+           <div dangerouslySetInnerHTML={{__html:html}}></div>
+         </div>
       );
-
-      if(selectedNewsItemTitle === item.fields.title) {
-        option = (
-          <option selected key={item.fields.title} value={item.fields.title}>
-            {item.fields.title}
-          </option>
-        );
-      return option;
+       
     });
   }
 
 
   render() {
-    let newsList = this.renderNewsList();
-    let mobileNewsList = this.renderMobileNewsList();
-    let news = this.state.entryStore.selectedNewsItem;
-    let html = Markdown.toHTML(item.fields.content);
-
+    
+    let listItems = this.renderListItems();
+    let item = this.state.entryStore.selectedNewsItem;
+    
     return (
       <Page title='News'>
-
+        
         <div style={Style.split} key='split'>
-          {/* Mobile Navigation */}
-          <select onChange={this.onMobileNewsListChanged} key='mobile-nav'
-            style={Style.mobileNewsList}>
-            {mobileNewsList}
-          </select>
 
-          {/* news */}
-          <div style={Style.news} key='news'>
-           <div dangerouslySetInnerHTML={{__html:html}}></div>
-          </div>
-
-          {/* Navigation */}
-          <div className="news">
-            <ul style={Style.newsList}>
-              {newsList}
-            </ul>
+          {/* News list */}
+          <div className='news'>
+           
+              {listItems}
+           
           </div>
         </div>
-
       </Page>
     );
+
   }
 }
 

@@ -17,7 +17,6 @@ import NewsPage from './components/NewsPage/NewsPage';
 
 export default (
   <Route handler={App}>
-    <Route handler={NewsPage} name="news" path="/news" />
     <Route handler={CompanyPage} name="company" path="/company" />
     <Route handler={ContactPage} name="contact" path="/contact" />
     <Route handler={TeamPage} name="team" path="/team" />
@@ -25,6 +24,7 @@ export default (
       <Route handler={WorkPage} path="/work/:project" />
     </Route>
     <Route handler={ShopPage} name="shop" path="/shop"/>
+     <Route handler={NewsPage} name="news" path="/news" />
     <Route handler={SteelDayPage} name='steel-day' path='/steel-day' />
     <DefaultRoute handler={HomePage} name="home" />
   </Route>
