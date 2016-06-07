@@ -45,6 +45,10 @@ store.setAll([
     title: 'Our Work'
   },
   {
+    route: 'news',
+    title: 'News'
+  },
+  {
     route: 'contact',
     title: 'Contact'
   },

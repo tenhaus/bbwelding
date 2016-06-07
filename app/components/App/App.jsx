@@ -18,6 +18,8 @@ import workImage from './images/our-work.jpg';
 import workImageRetina from './images/our-work@2x.jpg';
 import contactImage from './images/welder.jpg';
 import contactRetinaImage from './images/welder@2x.jpg';
+import newsImage from './images/news.jpg';
+import newsImageRetina from './images/news@2x.jpg';
 
 import AltActions from '../../actions/AltActions';
 import NavigationStore from '../../stores/NavigationStore';
@@ -36,7 +38,8 @@ function getState() {
 var ShopPageBackground = isRetina()? 'url('+ shopImageRetina +')': 'url('+ shopImage +')',
     TeamPageBackground = isRetina()? 'url('+ teamImageRetina +')': 'url('+ teamImage +')',
     CompanyPageBackground = isRetina()? 'url('+ companyImageRetina +')': 'url('+ companyImage +')',
-    WorkPageBackground = isRetina()? 'url('+ workImageRetina +')': 'url('+ workImage +')';
+    WorkPageBackground = isRetina()? 'url('+ workImageRetina +')': 'url('+ workImage +')',
+    NewsPageBackground = isRetina()? 'url('+ newsImageRetina +')': 'url('+ newsImage +')';
 
 class App extends React.Component {
 
@@ -123,6 +126,19 @@ class App extends React.Component {
         backgroundImage: CompanyPageBackground,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      };
+
+      headerStyle = {
+        marginBottom: '3rem'
+      }
+    }
+
+    if(selectedPage.route === 'news') {
+      pageStyle = {
+        backgroundImage: NewsPageBackground,
+        backgroundSize: 'cover',
+        backgroundPosition: 'top',
         backgroundAttachment: 'fixed'
       };
 

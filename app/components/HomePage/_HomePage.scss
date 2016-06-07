@@ -52,6 +52,25 @@
     cursor: pointer;
     font-weight: bold;
   }
+  
+  .news-section{
+    margin: 2em auto;
+    h2 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        font-size: 2rem;
+        margin: 0.25em auto;
+        color: #fff;
+    }
+    h3{
+      color: #fff;
+      font-weight: 600;
+    }
+    p{
+      color: #fff;
+    }
+  }
+ 
 }
 
 
@@ -64,6 +83,11 @@
       font-size: 1.5rem;
     }
   }
+  .news-section{
+    h2{
+      font-size: 1rem;
+    }
+  }
 }
 
 /* iPhone 6 */
@@ -74,6 +98,11 @@
 
     h1 {
       font-size: 1.5rem;
+    }
+  }
+  .news-section{
+    h2{
+      font-size: 1rem;
     }
   }
 }
@@ -89,6 +118,11 @@
       margin-bottom: 1rem;
     }
   }
+  .news-section{
+    h2{
+      font-size: 1rem;
+    }
+  }
 }
 
 /* Desktop */
@@ -100,6 +134,11 @@
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+    }
+  }
+  .news-section{
+    h2{
+      font-size: 1.5rem;
     }
   }
 }
@@ -120,5 +159,10 @@
         margin-bottom: 2rem;
       }
     }
+    .news-section{
+    h2{
+      font-size: 2rem;
+    }
+  }
   }
 }

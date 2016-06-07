@@ -7,6 +7,7 @@ class ProjectStore {
     this.projects = [];
     this.team = [];
     this.shop = [];
+    this.news = [];
     this.steelDayContent = null;
 
     this.selectedTeamMember = {
@@ -47,10 +48,18 @@ class ProjectStore {
       }
     }
 
+    this.selectedNewsItem = {
+      fields: {
+          title: '',
+          content: ''
+      }
+    }
+
     this.bindListeners({
       handleFetchData: AltActions.FETCH_DATA,
       handleSetSelectedTeamMember: AltActions.SET_SELECTED_TEAM_MEMBER,
-      handleSetSelectedShopItem: AltActions.SET_SELECTED_SHOP_ITEM
+      handleSetSelectedShopItem: AltActions.SET_SELECTED_SHOP_ITEM,
+      handleSetSelectedNewsItem: AltActions.SET_SELECTED_NEWS_ITEM
     });
   }
 
@@ -58,6 +67,7 @@ class ProjectStore {
     this.projects = content.projects;
     this.team = content.team;
     this.shop = content.shop;
+    this.news = content.news;
     this.steelDayContent = content.steelDayContent[0];
 
     if(this.team.length > 0) {
@@ -67,6 +77,10 @@ class ProjectStore {
     if(this.shop.length > 0) {
       this.selectedShopItem = this.shop[0];
     }
+
+    if(this.news.length > 0) {
+      this.selectedNewsItem = this.news[0];
+    }
   }
 
   handleSetSelectedTeamMember(member) {
@@ -75,6 +89,10 @@ class ProjectStore {
 
   handleSetSelectedShopItem(shopItem) {
     this.selectedShopItem = shopItem;
+  }
+
+  handleSetSelectedNewsItem(news) {
+    this.selectedNewsItem = news;
   }
 }
 

@@ -13,7 +13,6 @@ import ShopListItemRenderer from '../ShopListItemRenderer/ShopListItemRenderer';
 
 import AltActions from '../../actions/AltActions';
 
-
 var Markdown = require( "markdown" ).markdown;
 
 class ShopPage extends React.Component {
@@ -57,7 +56,7 @@ class ShopPage extends React.Component {
   onMobileShopItemChanged(event) {
     var name = event.target.value;
     var item = _.findWhere(this.state.entryStore.shop, {fields: {name: name}});
-    AltActions.setSelectedShopItem(shopItem);
+    AltActions.setSelectedShopItem(item);
   }
 
   renderListItems() {
