@@ -38,33 +38,42 @@ class NewsPage extends React.Component {
 
 
   renderListItems() {
-
     return _.map(this.state.entryStore.news, news => {
       let html = Markdown.toHTML(news.fields.content);
-      console.log(news)
       return (
         <div>
            <h3>{news.fields.title}</h3> 
+           <p style={Style.newsDate} key="newsDate">{news.fields.date}</p>
            <div dangerouslySetInnerHTML={{__html:html}}></div>
          </div>
       );
-       
     });
   }
 
 
   render() {
-    
     let listItems = this.renderListItems();
     let item = this.state.entryStore.selectedNewsItem;
+    let newsImage = null;
+
+    if(item.fields.primaryImage) {
+      newsImage = item.fields.primaryImage.fields.file.url;
+      newsImage += '?w=600&fm=jpg&q=75';
+    }
     
     return (
       <Page title='News'>
         
         <div style={Style.split} key='split'>
 
+          <div style={Style.imageSection} key="newsImage">
+
+            <img src={newsImage} style={[Style.newsImage, this.props.style]} />
+
+          </div>
+
           {/* News list */}
-          <div className='news'>
+          <div style={Style.newsSection} key="news">
            
               {listItems}
            

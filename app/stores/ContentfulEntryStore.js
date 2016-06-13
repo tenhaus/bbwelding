@@ -51,9 +51,21 @@ class ProjectStore {
     this.selectedNewsItem = {
       fields: {
           title: '',
-          content: ''
+          content: '',
+          primaryImage: {
+            fields: {
+              file: {
+                details: {
+                  image: {
+                    width: 0,
+                    height: 0
+                  }
+                }
+              }
+            }
+          }
+        }
       }
-    }
 
     this.bindListeners({
       handleFetchData: AltActions.FETCH_DATA,

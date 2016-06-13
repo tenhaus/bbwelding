@@ -8,9 +8,9 @@ export default {
   },
 
   newsDate: {
-    fontSize: '0.5rem',
+    fontSize: '1rem',
     fontStyle: 'italic',
-    fontWeight: '600',
+    fontWeight: '300',
     marginTop: '0.5rem',
     marginBottom: '0.5rem'
   },
@@ -41,5 +41,26 @@ export default {
 
   currentNewsListItem: {
     color: '#FF5D5D'
+  },
+
+  imageSection: {
+    width: '40%',
+
+    '@media (max-width: 768px)' : {
+      width: '100%'
+    }
+  },
+  newsImage: {
+    border: '4px solid #fff',
+    marginBottom: '2rem',
+    width: '100%',
+    height: 'auto'
+  },
+  newsSection: {
+    width: '55%',
+
+    '@media (max-width: 768px)' : {
+      width: '100%'
+    }
   }
 };
