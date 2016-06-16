@@ -10,6 +10,7 @@ import ContentfulEntryStore from '../../stores/ContentfulEntryStore';
 import AltActions from '../../actions/AltActions';
 
 var Markdown = require( "markdown" ).markdown;
+var Lightbox = require('react-lightbox');
 
 class NewsPage extends React.Component {
 
@@ -50,26 +51,41 @@ class NewsPage extends React.Component {
     });
   }
 
+  // renderImageGallery(){
+  //   return _.map(this.state.entryStore.news, news => {
+  //     return _.map(this.state.entryStore.selectedNewsItem.fields.imageGallery, i =>{
+  //       return(
+  //         let imageUrl = [fields.file.url];
+  //         <div>
+  //           <img src={imageUrl} className="react-lightbox-image"/>
+  //         </div>
+  //       )
+  //     });
+  //   });
+  // }
 
   render() {
     let listItems = this.renderListItems();
     let item = this.state.entryStore.selectedNewsItem;
+    // let imageGallery = this.renderImageGallery();
     let newsImage = null;
-
+ 
     if(item.fields.primaryImage) {
       newsImage = item.fields.primaryImage.fields.file.url;
-      newsImage += '?w=600&fm=jpg&q=75';
     }
-    
+    // var imageGallery = item.fields.imageGallery[fields.file.url];
+    // console.log(imageGallery);
     return (
       <Page title='News'>
         
         <div style={Style.split} key='split'>
 
-          <div style={Style.imageSection} key="newsImage">
-
-            <img src={newsImage} style={[Style.newsImage, this.props.style]} />
-
+          <div style={Style.imageSection} key="image">
+            <div>
+            
+              <Lightbox pictures={['http:'+ newsImage]} style={Style.newsImage} key="news-image"/>
+             
+            </div>
           </div>
 
           {/* News list */}

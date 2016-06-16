@@ -63,9 +63,13 @@ class ProjectStore {
                 }
               }
             }
+          },
+          imageGallery: {
+            fields: ''
           }
         }
       }
+      
 
     this.bindListeners({
       handleFetchData: AltActions.FETCH_DATA,
