@@ -112,7 +112,7 @@ class ShopPage extends React.Component {
     return (
       <Page title='Our Shop'>
         <div style={Style.topSection} key='top'>
-          <p>Bluebeam, SDS/2, Fabsuite and P2 systems, Infosight Corp, Shop Data, and Peddinghaus equipment are all part of what makes up our jobs run smoothly through our shop.</p>
+          <p>Bluebeam, SDS/2, Fabsuite and P2 systems, Infosight Corp, Shop Data, and Peddinghaus equipment are all part of what makes our jobs run smoothly through the shop.</p>
         </div>
 
 

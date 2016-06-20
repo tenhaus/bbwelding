@@ -1,0 +1,27 @@
+// trying to figure out:
+
+  // renderImageGallery(){
+  //  return _.map(this.state.entryStore.news, news => {
+  //   let imageGallery = news.fields.imageGallery;
+  //   return _.map(this.imageGallery, url => {
+  //     let imageUrl = [];
+  //     imageUrl.push(imageGallery.fields.file.url);
+  //     return imageUrl;
+  //   });
+  //  });
+  // }
+
+  // renderControls(){
+  //     return DOM.div({
+  //       className: 'my-controls'
+  //     }, 
+  //       DOM.div({
+  //         className: 'my-button my-button-left',
+  //         onClick: this.props.backward
+  //       }, '<'),
+  //       DOM.div({
+  //         className: 'my-button my-button-right',
+  //         onClick: this.props.forward
+  //       }, '>')
+  //     );
+  // }
