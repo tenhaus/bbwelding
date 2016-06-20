@@ -51,30 +51,48 @@ class NewsPage extends React.Component {
     });
   }
 
+  // trying to figure out:
+
   // renderImageGallery(){
-  //   return _.map(this.state.entryStore.news, news => {
-  //     return _.map(this.state.entryStore.selectedNewsItem.fields.imageGallery, i =>{
-  //       return(
-  //         let imageUrl = [fields.file.url];
-  //         <div>
-  //           <img src={imageUrl} className="react-lightbox-image"/>
-  //         </div>
-  //       )
-  //     });
+  //  return _.map(this.state.entryStore.news, news => {
+  //   let imageGallery = news.fields.imageGallery;
+  //   return _.map(this.imageGallery, url => {
+  //     let imageUrl = [];
+  //     imageUrl.push(imageGallery.fields.file.url);
+  //     return imageUrl;
   //   });
+  //  });
   // }
+
+  renderControls(){
+      return DOM.div({
+        className: 'my-controls'
+      }, 
+        DOM.div({
+          className: 'my-button my-button-left',
+          onClick: this.props.backward
+        }, '<'),
+        DOM.div({
+          className: 'my-button my-button-right',
+          onClick: this.props.forward
+        }, '>')
+      );
+  }
+
 
   render() {
     let listItems = this.renderListItems();
     let item = this.state.entryStore.selectedNewsItem;
+    let controls = this.renderControls();
     // let imageGallery = this.renderImageGallery();
     let newsImage = null;
  
     if(item.fields.primaryImage) {
       newsImage = item.fields.primaryImage.fields.file.url;
     }
-    // var imageGallery = item.fields.imageGallery[fields.file.url];
+    
     // console.log(imageGallery);
+   
     return (
       <Page title='News'>
         
@@ -83,7 +101,9 @@ class NewsPage extends React.Component {
           <div style={Style.imageSection} key="image">
             <div>
             
-              <Lightbox pictures={['http:'+ newsImage]} style={Style.newsImage} key="news-image"/>
+              <Lightbox pictures={['http:'+ newsImage]} style={Style.newsImage} key="news-image"
+              keyboard controls={controls}/> 
+            
              
             </div>
           </div>

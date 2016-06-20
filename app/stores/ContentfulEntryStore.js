@@ -64,9 +64,19 @@ class ProjectStore {
               }
             }
           },
-          imageGallery: {
-            fields: ''
-          }
+          imageGallery: [{
+              fields: {
+                file:{
+                  url: '',
+                  details: {
+                    image: {
+                      width: 0,
+                      height: 0
+                    }
+                  }
+                }
+              }
+          }]
         }
       }
       
