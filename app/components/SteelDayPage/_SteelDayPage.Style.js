@@ -1,7 +1,24 @@
 export default {
+  split: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    '@media (max-width: 768px)' : {
+      display: 'block'
+    }
+  },
+  image: {
+    width: '30%',
+    height: 'auto',
+    '@media (max-width: 768px)' : {
+      maxWidth: '100%'
+    }
+  },
   content: {
-    maxWidth: '70%',
-    lineHeight: '1.4rem'
+    maxWidth: '60%',
+    lineHeight: '1.4rem',
+    '@media (max-width: 768px)' : {
+      maxWidth: '100%'
+    }
   },
 
   formContent: {
@@ -23,5 +40,6 @@ export default {
 
   confirmation: {
     marginTop: '3rem'
-  }
+  },
+
 };

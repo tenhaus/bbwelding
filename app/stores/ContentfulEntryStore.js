@@ -8,7 +8,7 @@ class ProjectStore {
     this.team = [];
     this.shop = [];
     this.news = [];
-    this.steelDayContent = null;
+    this.steelDayContent = [];
 
     this.selectedTeamMember = {
       fields: {
@@ -79,7 +79,6 @@ class ProjectStore {
           }]
         }
       }
-      
 
     this.bindListeners({
       handleFetchData: AltActions.FETCH_DATA,
@@ -107,6 +106,7 @@ class ProjectStore {
     if(this.news.length > 0) {
       this.selectedNewsItem = this.news[0];
     }
+
   }
 
   handleSetSelectedTeamMember(member) {
@@ -120,6 +120,7 @@ class ProjectStore {
   handleSetSelectedNewsItem(news) {
     this.selectedNewsItem = news;
   }
+
 }
 
 module.exports = alt.createStore(ProjectStore, 'ProjectStore');

@@ -48,9 +48,14 @@
   .steel-day-link {
     color: #fff;
     font-size: 2rem;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+    &:hover,
+    &:active,
+    &:focus{
+      color: darken(#fff, 50%);
+    }
   }
   
   .news-section{

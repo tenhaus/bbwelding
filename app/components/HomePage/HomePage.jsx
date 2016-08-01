@@ -84,10 +84,14 @@ class HomePage extends React.Component {
         <RetinaImage className='welder-image' src={AbstractImage} />
 
         <div className='copy'>
-          <p>SAVE THE DATE:</p>
-          <p> Friday, September 30, 2016 - 10:00 - 3:00</p>   
-          <h1>AISC STEEL DAY</h1>
-          <p>and B&amp;B Welding CELEBRATION - 45 Years of Excellence</p>
+         
+            <p>SAVE THE DATE:</p>
+            <p> Friday, September 30, 2016 - 10:00 - 3:00</p>   
+             <Link to="/steel-day" className="steel-day-link">
+              <h1>AISC STEEL DAY</h1>
+             </Link>
+            <p>and B&amp;B Welding CELEBRATION - 45 Years of Excellence</p>
+
         </div>
 
         <div style={Style.fullSection} className="news-section">
