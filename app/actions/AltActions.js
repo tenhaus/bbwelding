@@ -48,10 +48,15 @@ class AltActions {
         'from_email': 'info@bandbwelding.com',
         'to': [
             {
-              'email': 'chayen@gmail.com',
-              'name': 'Chris Hayen',
-              'type': 'to'
-            },
+              'email' : 'michele@bandbwelding.com',
+              'name' : 'Michele',
+              'type' : 'to'
+            }
+            // {
+            //   'email': 'chayen@gmail.com',
+            //   'name': 'Chris Hayen',
+            //   'type': 'to'
+            // },
             // {
             //   'email': 'rrytter@jensendesignstudio.com',
             //   'name': 'Robert Rytter',

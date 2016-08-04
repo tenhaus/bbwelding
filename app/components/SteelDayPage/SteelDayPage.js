@@ -9,6 +9,7 @@ import Page from '../Page/Page';
 import Style from './_SteelDayPage.Style';
 
 import FlyerImage from './images/Steel_Day_Flyer-01.jpg';
+import FlyerImagePrint from './images/Steel_Day_Flyer_Print.jpg';
 
 class SteelDayPage extends React.Component {
 
@@ -169,14 +170,16 @@ class SteelDayPage extends React.Component {
 
           <p><span style={Style.lineHead}>Location:</span>4640 North Point Blvd, Edgemere, MD 21219</p>
           <p><span style={Style.lineHead}>Directions:</span>Directions can be found <a href='/#/contact'>here</a></p>
-          <p><span style={Style.lineHead}>Food:</span>Pulled Pork BBQ, Pit Beef & Turkey with all the fixings along with salads served 12:00 pm – 2:00 pm</p>
+          <p><span style={Style.lineHead}>Food:</span>Lunch will be provided from 12:00 noon – 2:00 pm</p>
           <p><span style={Style.lineHead}>Dress Code:</span>Business casual/jeans welcome. (Ladies no open toed or high heeled shoes)</p>
           <p><span style={Style.lineHead}>Safety Gear:</span>Long pants and closed toe shoes required for facility tours. (safety glasses will be provided)</p>
-
+          <p><span style={Style.lineHead}>Of Interest To:</span>Architects, Engineer, Contractors, Students, Developers – all welcome!</p>
           {registrationContent}
           </div>
           <div style={Style.image} key="image">
-          
+            <a href={FlyerImagePrint} title="Steel Day Flyer 2016" target="_blank">
+              <img src={FlyerImage} alt="Steel Day Flyer 2016"/>
+            </a>
           </div>
         </div>
         
