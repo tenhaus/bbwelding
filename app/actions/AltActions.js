@@ -43,7 +43,7 @@ class AltActions {
     var toEmail = 'name: ' + name + ' email: ' + email + ' phone ' + phone + ' url: ' + url;
 
     var data = {
-      'key': 'vSvSsvW65FgK3AY0Ru-tcQ',
+      'key': 'cp9vFt3RxLEobV-dhOz_Cg',
       'message': {
         'from_email': 'info@bandbwelding.com',
         'to': [
