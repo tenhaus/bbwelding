@@ -1,7 +1,6 @@
 'use strict'
 import Alt from '../alt';
 import Contentful from 'contentful-agent';
-import request from 'superagent';
 
 var client = require('contentful-agent')({
   space: 'lxziqch8v8yh',
@@ -40,41 +39,38 @@ class AltActions {
   }
 
   submitSteelDayForm(name, url, email, phone) {
-    var toEmail = 'name: ' + name + ' email: ' + email + ' phone ' + phone + ' url: ' + url;
+
+    var toEmail =  'name: ' + name + ' email: ' + email + ' phone ' + phone + ' url: ' + url;
 
     var data = {
-      'key': 'vSvSsvW65FgK3AY0Ru-tcQ',
-      'message': {
-        'from_email': 'info@bandbwelding.com',
-        'to': [
-            {
-              'email' : 'michele@bandbwelding.com',
-              'name' : 'Michele',
-              'type' : 'to'
-            }
-            // {
-            //   'email': 'chayen@gmail.com',
-            //   'name': 'Chris Hayen',
-            //   'type': 'to'
-            // },
-            // {
-            //   'email': 'rrytter@jensendesignstudio.com',
-            //   'name': 'Robert Rytter',
-            //   'type': 'to'
-            // }
-          ],
-        'autotext': 'true',
-        'subject': 'Steel Day Registration',
-        'html': toEmail
-      }
-    };
+                  'FromEmail': 'info@bandbwelding.com',
+                  'FromName': 'info@bandbwelding.com',
+                  'Subject': 'Steel Day Registration',
+                  'Html-part': toEmail,
+                  'Recipients':[{
+                          'email' : 'michele@bandbwelding.com',
+                          'name' : 'Michele',
+                          'type' : 'to'
+                         },{
+                          'email' : 'jwidener08@gmail.com',
+                          'name' : 'test',
+                          'type' : 'to'
+                  }]
+        };
 
-    request.post('https://mandrillapp.com/api/1.0/messages/send.json')
-      .send(data)
-      .end((err, response) => {
-        this.dispatch(true);
-      });
-  }
+      emailjs.send("b_b_welding","template_xcqE4MOa", data)
+      .then(
+        function(response) {
+          console.log("SUCCESS", response);
+          return true;
+        }, 
+        function(error) {
+          console.log("FAILED", error);
+        }
+        
+      );
+
+    }
 }
 
 export default Alt.createActions(AltActions);

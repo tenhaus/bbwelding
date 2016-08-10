@@ -9,7 +9,7 @@ import Page from '../Page/Page';
 import Style from './_SteelDayPage.Style';
 
 import FlyerImage from './images/Steel_Day_Flyer-01.jpg';
-import FlyerImagePrint from './images/Steel_Day_Flyer_Print.jpg';
+import FlyerPDF from 'MyPdfViewer';
 
 class SteelDayPage extends React.Component {
 
@@ -177,7 +177,7 @@ class SteelDayPage extends React.Component {
           {registrationContent}
           </div>
           <div style={Style.image} key="image">
-            <a href={FlyerImagePrint} title="Steel Day Flyer 2016" target="_blank">
+            <a href={FlyerPDF} title="Steel Day Flyer 2016" target="_blank">
               <img src={FlyerImage} alt="Steel Day Flyer 2016"/>
             </a>
           </div>
