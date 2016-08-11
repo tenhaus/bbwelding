@@ -43,6 +43,7 @@ class AltActions {
     var toEmail =  'name: ' + name + ' email: ' + email + ' phone ' + phone + ' url: ' + url;
 
     var data = {
+
                   'FromEmail': 'info@bandbwelding.com',
                   'FromName': 'info@bandbwelding.com',
                   'Subject': 'Steel Day Registration',
