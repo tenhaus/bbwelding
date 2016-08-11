@@ -11,6 +11,7 @@ class SteelDayStore {
   }
 
   submitSteelDayForm() {
+    console.log('here');
     this.registered = true;
   }
 

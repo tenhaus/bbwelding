@@ -9,7 +9,8 @@ import Page from '../Page/Page';
 import Style from './_SteelDayPage.Style';
 
 import FlyerImage from './images/Steel_Day_Flyer-01.jpg';
-import FlyerPDF from 'MyPdfViewer';
+import Flyer from './images/Steel_Day_Flyer_for_website.pdf';
+
 
 class SteelDayPage extends React.Component {
 
@@ -43,6 +44,7 @@ class SteelDayPage extends React.Component {
   }
 
   onRegistrationChanged() {
+    console.log('changed', SteelDayStore.getState());
     this.setState({
       store: SteelDayStore.getState()
     });
@@ -151,7 +153,7 @@ class SteelDayPage extends React.Component {
 
   render() {
     let registrationContent = null;
-    
+
     if(this.state.store.registered) {
       registrationContent = this.renderConfirmation();
     }
@@ -176,13 +178,14 @@ class SteelDayPage extends React.Component {
           <p><span style={Style.lineHead}>Of Interest To:</span>Architects, Engineer, Contractors, Students, Developers – all welcome!</p>
           {registrationContent}
           </div>
+
           <div style={Style.image} key="image">
-            <a href={FlyerPDF} title="Steel Day Flyer 2016" target="_blank">
+            <a href={Flyer} title="Steel Day Flyer 2016" target="_blank">
               <img src={FlyerImage} alt="Steel Day Flyer 2016"/>
             </a>
           </div>
         </div>
-        
+
       </Page>
     );
   }
