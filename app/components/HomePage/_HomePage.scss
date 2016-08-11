@@ -47,14 +47,24 @@
   
   .steel-day-link {
     color: #fff;
-    font-size: 2rem;
-    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+    text-decoration: none;
     &:hover,
     &:active,
     &:focus{
-      color: darken(#fff, 50%);
+      color: #FF5D5D;
+    }
+    h1{
+      font-size: 4em;
+      margin-bottom: 0;
+      text-decoration: underline;
+    }
+    p{
+      margin-bottom: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-decoration: none;
     }
   }
   

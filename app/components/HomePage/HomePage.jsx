@@ -89,7 +89,9 @@ class HomePage extends React.Component {
             <p> Friday, September 30, 2016 - 10:00 - 3:00</p>   
              <Link to="/steel-day" className="steel-day-link">
               <h1>AISC STEEL DAY</h1>
+               <p>Click to Register</p>
              </Link>
+
             <p>and B&amp;B Welding CELEBRATION - 45 Years of Excellence</p>
 
         </div>

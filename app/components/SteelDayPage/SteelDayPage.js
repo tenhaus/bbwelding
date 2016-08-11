@@ -116,7 +116,7 @@ class SteelDayPage extends React.Component {
           </div>
 
           <div className='control-group'>
-            <label htmlFor='url'>Url</label>
+            <label htmlFor='url'>Comany Name</label>
             <input id='url' value={this.state.url} ref='urlInput'
               onChange={this.onFormChanged} />
             <p className='hint'>Your primary site</p>
