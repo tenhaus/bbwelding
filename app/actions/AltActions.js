@@ -39,7 +39,7 @@ class AltActions {
   }
 
   submitSteelDayForm(name, url, email, phone) {
-
+    var self = this;
     var toEmail =  'name: ' + name + ' email: ' + email + ' phone ' + phone + ' url: ' + url;
 
     var data = {
@@ -63,12 +63,12 @@ class AltActions {
       .then(
         function(response) {
           console.log("SUCCESS", response);
-          return true;
-        }, 
+          self.dispatch();
+        },
         function(error) {
           console.log("FAILED", error);
         }
-        
+
       );
 
     }
