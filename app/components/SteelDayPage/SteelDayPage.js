@@ -166,7 +166,7 @@ class SteelDayPage extends React.Component {
       <Page title='Register now for Steel Day 2016!'>
       <div style={Style.split} key='split'>
         <div style={Style.content}>
-          <p>Attendees will tour a modern 35,000 sq ft fabrication shop with advanced CNC machinery and witness demonstrations of interoperability between engineering, detailing, estimating, production control and bar coding softwares including: Bluebeam, SDS/2, Fabsuite and P2 Systems, Infosight Corporation, Shop Data, and Peddinghaus equipment. Attendees will learn about the processes steel fabricators go through from receiving the steel through to shipping steel to the job site. Also on sight will be Hilti, Southern Galvanizing & Powder Coaters who will explain what their process is in the steel fabrication business.</p>
+          <p>Attendees will tour a modern 35,000 sq ft fabrication shop with advanced CNC machinery and witness demonstrations of interoperability between engineering, detailing, estimating, production control and bar coding softwares including: Bluebeam, SDS/2, Fabsuite and P2 Systems, Infosight Corporation, Shop Data, and Peddinghaus equipment. Attendees will learn about the processes steel fabricators go through from receiving the steel through to shipping steel to the job site. There will be an AISC representative present to give a presentation, Structural Steel: Innovations for your Next Project. You will receive a certificate of attendance (credit) for this class.</p>
           <p><span style={Style.lineHead}>Date:</span>Friday, September 30th, 2016</p>
           <p><span style={Style.lineHead}>Time/Length:</span>10:00 am – 3:00 pm</p>
 

@@ -55,6 +55,7 @@ export default {
     border: '4px solid #fff',
     marginBottom: '2rem',
     width: '100%',
+    height: 'auto',
     display: 'block'
   },
   
