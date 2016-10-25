@@ -49,7 +49,7 @@ class HomePage extends React.Component {
 
     // find the project from the url
     if(this.props.params.news) {
-      selectedNewsItem = _.findWhere(
+      selectedNews = _.findWhere(
         this.state.entryStore.news,
         {fields: {path: this.props.params.news}}
       );
@@ -93,7 +93,9 @@ class HomePage extends React.Component {
           <h2>News</h2>
 
           <Link to="/news">
-           {newsItem}
+           <h3>B&amp;B Welding featured in a new Baltimore County video.</h3>
+           <p>Successful Baltimore County Businesses Little Crystal Bijoux and B&B Welding are profiled in this episode. Made in Baltimore County showcases entrepreneurs and shows you how you can use the resources of BCPL to start your own successful business.</p>
+           <a href="https://www.youtube.com/watch?v=EU_e4eS5_iY&feature=youtu.be" target="_blank"> Made in Baltimore County Episode 1</a>
           </Link>
          
         </div>
