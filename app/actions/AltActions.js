@@ -11,8 +11,8 @@ var contentTypes = {
   projects: '3W9hNwuc8EKcosagC0GuGE',
   team: '4pbkhrIx5Co2QYoMKC2cqu',
   shop: 'shop',
-  news: 'news',
-  steelDayContent: '62PK9zHWBqGiqKEU8Cgg4U'
+  news: 'news'
+  //steelDayContent: '62PK9zHWBqGiqKEU8Cgg4U'
 };
 
 class AltActions {

@@ -8,7 +8,7 @@ class ProjectStore {
     this.team = [];
     this.shop = [];
     this.news = [];
-    this.steelDayContent = [];
+    //this.steelDayContent = [];
 
     this.selectedTeamMember = {
       fields: {
@@ -93,7 +93,7 @@ class ProjectStore {
     this.team = content.team;
     this.shop = content.shop;
     this.news = content.news;
-    this.steelDayContent = content.steelDayContent[0];
+    //this.steelDayContent = content.steelDayContent[0];
 
     if(this.team.length > 0) {
       this.selectedTeamMember = this.team[0];

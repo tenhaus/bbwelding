@@ -84,15 +84,8 @@ class HomePage extends React.Component {
         <RetinaImage className='welder-image' src={AbstractImage} />
 
         <div className='copy'>
-         
-            <p>SAVE THE DATE:</p>
-            <p> Friday, September 30, 2016 - 10:00 - 3:00</p>   
-             <Link to="/steel-day" className="steel-day-link">
-              <h1>AISC STEEL DAY</h1>
-               <p>Click to Register</p>
-             </Link>
-
-            <p>and B&amp;B Welding CELEBRATION - 45 Years of Excellence</p>
+         <h1>The smartest working shop in the steel business</h1>
+-        <p>ONE &quot;B&quot; FOR BRAINS; ONE &quot;B&quot; FOR BRAWN.</p>
 
         </div>
 
