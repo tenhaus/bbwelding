@@ -1,8 +1,18 @@
 export default {
 
   base: {
-    textAlign: 'center',
-    cursor: 'pointer'
+    textAlign: 'left',
+    cursor: 'pointer',
+    marginBottom: '0.25rem',
+    ':hover': {
+        color: '#FF5D5D'
+     },
+     ':focus': {
+        color: '#FF5D5D'
+     },
+      ':active': {
+        color: '#CC4A4A'
+     },
   },
 
   image: {

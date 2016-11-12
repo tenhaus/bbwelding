@@ -29,9 +29,6 @@ class ShopListItemRenderer extends React.Component {
     return (
       <li className='team-list-item' style={Style.base}
         onClick={this.onClick}>
-
-        <img src={profileImage}
-          style={[Style.image, this.props.style]} />
         <p>{item.fields.name}</p>
 
       </li>

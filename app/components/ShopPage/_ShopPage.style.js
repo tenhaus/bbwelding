@@ -19,7 +19,9 @@ export default {
 
   teamList: {
     listStyle: 'none',
-
+    margin: '0',
+    padding: '1rem',
+    border: '1px solid #fff',
     '@media (max-width: 768px)' : {
       display: 'none'
     }
@@ -27,6 +29,7 @@ export default {
 
   mobileTeamList: {
     width: '100%',
+    marginTop: '1rem',
     marginBottom: '2rem',
     display: 'none',
 
@@ -36,8 +39,7 @@ export default {
   },
 
   profile: {
-    width: '50%',
-
+    width: '70%',
     '@media (max-width: 768px)' : {
       width: '100%'
     }
