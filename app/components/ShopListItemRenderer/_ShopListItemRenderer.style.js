@@ -12,7 +12,7 @@ export default {
      },
       ':active': {
         color: '#CC4A4A'
-     },
+     }
   },
 
   image: {

@@ -10,6 +10,8 @@ export default {
 
   teamList: {
     listStyle: 'none',
+    border: '1px solid #fff',
+    padding: '1rem',
 
     '@media (max-width: 768px)' : {
       display: 'none'

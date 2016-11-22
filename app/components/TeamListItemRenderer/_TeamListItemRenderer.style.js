@@ -1,13 +1,16 @@
 export default {
 
   base: {
-    textAlign: 'center',
-    cursor: 'pointer'
-  },
-
-  image: {
-    width: '100px',
-    height: 'auto',
-    border: '2px solid #fff'
+    textAlign: 'left',
+    cursor: 'pointer',
+    ':hover': {
+        color: '#FF5D5D'
+     },
+     ':focus': {
+        color: '#FF5D5D'
+     },
+      ':active': {
+        color: '#CC4A4A'
+     }
   }
 };

@@ -61,6 +61,7 @@ class ShopPage extends React.Component {
 
   renderListItems() {
     return _.map(this.state.entryStore.shop, item => {
+      
       return <ShopListItemRenderer key={item.fields.name} item={item} />;
     });
   }

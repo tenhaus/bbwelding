@@ -19,19 +19,12 @@ class TeamListItemRenderer extends React.Component {
   render() {
 
     let member = this.props.member;
-    let profileImage = '';
-
-    if(member.fields.primaryImage.hasOwnProperty('fields')) {
-      profileImage = member.fields.primaryImage.fields.file.url;
-    }
-    profileImage += '?w=100&fm=jpg&q=75';
+   
 
     return (
       <li className='team-list-item' style={Style.base}
         onClick={this.onClick}>
 
-        <img src={profileImage}
-          style={[Style.image, this.props.style]} />
         <p>{member.fields.name}</p>
 
       </li>

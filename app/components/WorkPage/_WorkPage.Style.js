@@ -24,7 +24,8 @@ export default {
     listStyle: 'none',
     margin: 0,
     width: '40%',
-
+    padding: '1rem',
+    border: '1px solid #fff',
     '@media (max-width: 768px)' : {
       display: 'none'
     }
@@ -45,6 +46,7 @@ export default {
   },
 
   currentProjectListItem: {
-    color: '#FF5D5D'
+    backgroundColor: '#FF5D5D',
+    padding: '0.25rem'
   }
 };
