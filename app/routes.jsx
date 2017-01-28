@@ -12,6 +12,7 @@ import WorkPage from './components/WorkPage/WorkPage';
 import ContactPage from './components/ContactPage/ContactPage';
 import TeamPage from './components/TeamPage/TeamPage';
 // import SteelDayPage from './components/SteelDayPage/SteelDayPage';
+import FeedbackPage from './components/FeedbackPage/FeedbackPage';
 import ShopPage from './components/ShopPage/ShopPage';
 import NewsPage from './components/NewsPage/NewsPage';
 

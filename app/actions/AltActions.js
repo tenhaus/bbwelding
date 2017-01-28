@@ -72,6 +72,41 @@ class AltActions {
       );
 
     }
+
+    submitFeedbackForm(name, url, feedbackContent) {
+    var self = this;
+    var toEmail =  'name: ' + name + ' email: ' + email + 'feedback' + feedbackContent;
+
+    var data = {
+
+                  'FromEmail': 'info@bandbwelding.com',
+                  'FromName': 'info@bandbwelding.com',
+                  'Subject': 'Feedback',
+                  'Html-part': toEmail,
+                  'Recipients':[{
+                          'email' : 'michele@bandbwelding.com',
+                          'name' : 'Michele',
+                          'type' : 'to'
+                         },{
+                          'email' : 'jwidener08@gmail.com',
+                          'name' : 'test',
+                          'type' : 'to'
+                  }]
+        };
+
+      emailjs.send("b_b_welding","template_xcqE4MOa", data)
+      .then(
+        function(response) {
+          console.log("SUCCESS", response);
+          self.dispatch();
+        },
+        function(error) {
+          console.log("FAILED", error);
+        }
+
+      );
+
+    }
 }
 
 export default Alt.createActions(AltActions);
